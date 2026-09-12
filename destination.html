@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations &ndash; Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html" aria-current="page">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" id="page-header">
+      <span class="page-header__eyebrow">ALL DESTINATIONS</span>
+      <h1 class="page-header__title">Every Destination We Offer</h1>
+      <p class="page-header__desc">
+        Select a destination by region, or search for the name of a place you have already visited.
+      </p>
+    </section>
+
+    <!-- ===== SEARCH & FILTER TOOLBAR -->
+    <form action="" class="destinations-toolbar" role="search" aria-label="Search and filter destination">
+      <div class="destinations-toolbar__search">
+        <label for="destination-search" class="visually-hidden">Search a destination</label>
+        <input type="search" name="destination-search" id="destination-search">
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter by region">
+        <button type="button" class="filter-bar__chip filter-bar__chip--active" data-filter="all">All</button>
+        <button type="button" class="filter-bar__chip" data-filter="asia">Asia</button>
+        <button type="button" class="filter-bar__chip" data-filter="europe">Europe</button>
+        <button type="button" class="filter-bar__chip" data-filter="oceania">Oceania</button>
+      </div>
+    </form>
+    
+    <!-- ===== DESTINATION GRID ===== -->
+    <section class="destinations" id="destinations">
+      <div class="destination-grid">
+
+        <!-- DESTINATION 1 -->
+        <article class="destination-card">
+          <img src="" alt="A tropical beach in Bali with coconut trees" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Bali</h3>
+            <p class="destination-card__country">Indonesia</p>
+            <p class="destination-card__desc">
+              Beaches, food, culture, and activity options easily tailored to various travel styles.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $499</span>
+              <span class="destination-card__tour-count">24 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=bali" class="button button--ghost">Explore Bali</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 2 -->
+        <article class="destination-card">
+          <img src="" alt="A historic temple in Kyoto, Japan" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Kyoto</h3>
+            <p class="destination-card__country">Japan</p>
+            <p class="destination-card__desc">
+              A city with historic temples, quiet side streets, and culture that is still felt in everyday life.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $899</span>
+              <span class="destination-card__tour-count">18 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=kyoto" class="button button--ghost">Explore Kyoto</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 3 -->
+        <article class="destination-card">
+          <img src="" alt="Swiss Alps mountains with a small village" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Swiss Alps</h3>
+            <p class="destination-card__country">Switzerland</p>
+            <p class="destination-card__desc">
+              Mountains, small villages, and travel routes with scenery that is hard to miss.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,299</span>
+              <span class="destination-card__tour-count">15 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=swiss-alps" class="button button--ghost">Explore Swiss Alps</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 4 -->
+        <article class="destination-card">
+          <img src="" alt="The clear waters of Raja Ampat from above" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Raja Ampat</h3>
+            <p class="destination-card__country">Indonesia</p>
+            <p class="destination-card__desc">
+              Crystal-clear waters, small islands, and one of the best destinations to enjoy underwater life.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $899</span>
+              <span class="destination-card__tour-count">12 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=raja-ampat" class="button button--ghost">Explore Raja Ampat</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 5 -->
+        <article class="destination-card">
+          <img src="" alt="The distinctive blue-and-white buildings of Santorini, Greece." class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Santorini</h3>
+            <p class="destination-card__country">Greece</p>
+            <p class="destination-card__desc">
+              White architecture, the Aegean Sea, and an island atmosphere best enjoyed without rushing.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,099</span>
+              <span class="destination-card__tour-count">16 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=santorini" class="button button--ghost">Explore Santorini</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 6 -->
+        <article class="destination-card">
+          <img src="" alt="The vast landscape of mountains and lakes in New Zealand." class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">New Zealand</h3>
+            <p class="destination-card__country">New Zealand</p>
+            <p class="destination-card__desc">
+              Expansive landscapes, lakes, mountains, and road trips &mdash; perfect for those who want to explore extensively.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,499</span>
+              <span class="destination-card__tour-count">21 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=new-zealand" class="button button--ghost">Explore New Zealand</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="destinations__empty-state" id="destinations-empty">
+        No trips found.<br>
+        Try changing your destination or travel dates.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
