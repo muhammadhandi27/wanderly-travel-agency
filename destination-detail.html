@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali, Indonesia &ndash; Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Home</a></li>
+        <li aria-current="page">Bali</li>
+      </ol>
+    </nav>
+
+    <!-- ===== DESTINATION HERO ===== -->
+    <section class="destination-hero">
+      <img src="" alt="">
+      <div class="destination-hero__overlay">
+        <span class="destination-hero__country">Indonesia</span>
+        <h1 class="destination-hero__title">Bali</h1>
+      </div>
+    </section>
+
+    <!-- ===== DESTINATION DETAIL (Content + Sidebar) ===== -->
+    <div class="destination-detail">
+
+      <article class="destination-detail__content">
+        <h2>About Bali</h2>
+        <p>
+          Bali offers a combination rarely found in a single place: beaches, rice fields, a vibrant living culture, and a diverse range of food options. Most areas are easily accessible, so you don't have to spend too much time traveling on the road.
+        </p>
+        <p>
+          For first-time visitors, southern areas like Seminyak and Uluwatu are ideal for beach activities, while Ubud offers a more tranquil atmosphere, surrounded by rice fields and art galleries.
+        </p>
+
+        <h2>What to Expect</h2>
+        <p>
+          The weather in Bali tends to be warm year-round, with a dry season that generally lasts from April to October. Most destinations are accessible by road, and many accommodations offer airport transfer services.
+        </p>
+      </article>
+
+      <aside class="destination-detail__sidebar">
+        <div class="info-card">
+          <p class="info-card__price">From $499 <span>per person</span></p>
+          <p class="info-card__tour-count">24 experiences available</p>
+
+          <a href="booking.html?destination=bali" class="button button--primary info-card__cta">Continue to Booking</a>
+
+          <button 
+            type="button"
+            class="button button--outline info-card__save"
+            data-destination-id="bali"
+            aria-pressed="false"
+          >
+            Save Trip
+          </button>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- ===== PHOTO GALLERY ===== -->
+    <section class="destination-gallery">
+      <h2 class="destination-gallery__title">Photo Gallery</h2>
+      <div class="destination-gallery__grid">
+        <img src="images/destination/" alt="">
+        <img src="images/destination/" alt="">
+        <img src="images/destination/" alt="">
+        <img src="images/destination/" alt="">
+      </div>
+    </section>
+
+    <!-- ===== RELATED TOUR PACKAGE ===== -->
+    <section class="related-package">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">TOUR PACKAGES</span>
+        <h2 class="section-heading__title">Available Tours for Bali</h2>
+      </div>
+
+      <div class="tour-package-grid">
+        <article class="tour-package-card">
+          <img src="images/tourpackages/" alt="">
+          <span class="tour-package__category">BEACH</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Slow Days in Bali</h3>
+            <p class="tour-package-card__location">Bali, Indonesia</p>
+            <p class="tour-package-card__duration">5 Days / 4 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of beaches, local food, and a few places to visit without making the itinerary feel packed.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $649/person</span>
+              <a href="tourpackage-detail.html" class="button button--ghost">View Details</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="promo-banner">
+      <span class="promo-banner__eyebrow">READY TO GO?</span>
+      <h2 class="promo-banner__title">Ready to Visit Bali?</h2>
+      <p class="promo-banner__desc">
+        Choose your travel dates and let us help take care of the details.
+      </p>
+      <a href="booking.html?destination=bali" class="button button--primary">Start Planning</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
