@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderly — Travel Planning, Made Simpler</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <span class="hero__eyebrow">EXPLORE THE WORLD</span>
+        <h1 class="hero__headline">Go Somewhere Worth Remembering.</h1>
+        <p class="hero__subtitle">
+          Discover destinations, travel packages, and experiences that match the way you want to travel.
+        </p>
+
+        <div class="hero__actions">
+          <a href="destination.html" class="button button--primary">Explore Destinations</a>
+          <a href="tourpackage.html" class="button button--secondary">View Tour Packages</a>
+        </div>
+      </div>
+
+      <!-- ===== TRAVEL SEARCH WIDGET ===== -->
+      <form action="" class="search-widget" role="search" aria-label="Trip search">
+        <h2 class="search-widget__title">Where Are You Going?</h2>
+
+        <div class="search-widget__field">
+          <label for="search-date">Travel Date</label>
+          <input type="date" name="travel-date" id="search-date" placeholder="Choose your date">
+        </div>
+
+        <div class="search-widget__field">
+          <label for="search-travelers">Travelers</label>
+          <select name="travelers" id="search-travelers">
+            <option value="1">1 Traveler</option>
+            <option value="2" selected>2 Traveler</option>
+            <option value="3">3 Traveler</option>
+            <option value="4">4 Traveler</option>
+          </select>
+        </div>
+        
+        <div class="search-widget__field">
+          <label for="search-tour-type">Tour Type</label>
+          <select name="tour-type" id="search-tour-type">
+            <option value="">Choose a type</option>
+            <option value="adventure">Adventure</option>
+            <option value="beach">Beach Escape</option>
+            <option value="cultural">Cultural Journey</option>
+            <option value="family">Family Vacation</option>
+            <option value="honeymoon">Honeymoon</option>
+            <option value="luxury">Luxury Travel</option>
+          </select>
+        </div>
+
+        <button type="submit" class="button button--primary search-widget__submit">Search Trips</button>
+      </form>
+    </section>
+
+    <!-- ===== POPULAR DESTINATION ===== -->
+    <section class="destinations" id="destinations">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">POPULAR DESTINATIONS</span>
+        <h2 class="section-heading__title">Places People Keep Coming Back To</h2>
+        <p class="section-heading__desc">
+          From tropical beaches to cities with a rich history. Choose a destination that suits your travel plans.
+        </p>
+      </div>
+
+      <div class="destination-grid">
+
+        <!-- DESTINATION 1 -->
+        <article class="destination-card">
+          <img src="" alt="A tropical beach in Bali with coconut trees" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Bali</h3>
+            <p class="destination-card__country">Indonesia</p>
+            <p class="destination-card__desc">
+              Beaches, food, culture, and activity options easily tailored to various travel styles.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $499</span>
+              <span class="destination-card__tour-count">24 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=bali" class="button button--ghost">Explore Bali</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 2 -->
+        <article class="destination-card">
+          <img src="" alt="A historic temple in Kyoto, Japan" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Kyoto</h3>
+            <p class="destination-card__country">Japan</p>
+            <p class="destination-card__desc">
+              A city with historic temples, quiet side streets, and culture that is still felt in everyday life.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $899</span>
+              <span class="destination-card__tour-count">18 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=kyoto" class="button button--ghost">Explore Kyoto</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 3 -->
+        <article class="destination-card">
+          <img src="" alt="Swiss Alps mountains with a small village" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Swiss Alps</h3>
+            <p class="destination-card__country">Switzerland</p>
+            <p class="destination-card__desc">
+              Mountains, small villages, and travel routes with scenery that is hard to miss.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,299</span>
+              <span class="destination-card__tour-count">15 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=swiss-alps" class="button button--ghost">Explore Swiss Alps</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 4 -->
+        <article class="destination-card">
+          <img src="" alt="The clear waters of Raja Ampat from above" class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Raja Ampat</h3>
+            <p class="destination-card__country">Indonesia</p>
+            <p class="destination-card__desc">
+              Crystal-clear waters, small islands, and one of the best destinations to enjoy underwater life.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $899</span>
+              <span class="destination-card__tour-count">12 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=raja-ampat" class="button button--ghost">Explore Raja Ampat</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 5 -->
+        <article class="destination-card">
+          <img src="" alt="The distinctive blue-and-white buildings of Santorini, Greece." class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">Santorini</h3>
+            <p class="destination-card__country">Greece</p>
+            <p class="destination-card__desc">
+              White architecture, the Aegean Sea, and an island atmosphere best enjoyed without rushing.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,099</span>
+              <span class="destination-card__tour-count">16 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=santorini" class="button button--ghost">Explore Santorini</a>
+          </div>
+        </article>
+
+        <!-- DESTINATION 6 -->
+        <article class="destination-card">
+          <img src="" alt="The vast landscape of mountains and lakes in New Zealand." class="destination-card__image">
+          <div class="destination-card__body">
+            <h3 class="destination-card__title">New Zealand</h3>
+            <p class="destination-card__country">New Zealand</p>
+            <p class="destination-card__desc">
+              Expansive landscapes, lakes, mountains, and road trips &mdash; perfect for those who want to explore extensively.
+            </p>
+            <div class="destination-card__meta">
+              <span class="destination-card__price">From $1,499</span>
+              <span class="destination-card__tour-count">21 experiences</span>
+            </div>
+            <a href="destination-detail.html?id=new-zealand" class="button button--ghost">Explore New Zealand</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== FEATURED TOUR PACKAGES ===== -->
+    <section class="tour-packages" id="tour-packages">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">CURATED JOURNEYS</span>
+        <h2 class="section-heading__title">Trips With the Details Already Figured Out</h2>
+        <p class="section-heading__desc">
+          Not everyone wants to plan a trip from scratch. Choose a pre-made itinerary, then customize the parts that suit your needs.
+        </p>
+      </div>
+
+      <div class="tour-package-grid">
+
+        <!-- Tour Packages 1 -->
+        <article class="tour-package-card">
+          <img src="" alt="">
+          <span class="tour-package-card__category">CULTURE</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Japan, One City at a Time</h3>
+            <p class="tour-package-card__location">Tokyo &amp; Kyoto, Japan</p>
+            <p class="tour-package-card__duration">7 Days / 6 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of two cities with contrasting rhythms: starting with bustling Tokyo, then moving on to Kyoto for a more tranquil atmosphere.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $1,199</span>
+              <a href="tour-package-detail.html?id=japan-01" class="button button--ghost">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tour Packages 2 -->
+        <article class="tour-package-card">
+          <img src="" alt="">
+          <span class="tour-package-card__category">ADVENTURE</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Raja Ampat by Sea</h3>
+            <p class="tour-package-card__location">Raja Ampat, Indonesia</p>
+            <p class="tour-package-card__duration">6 Days / 5 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.8 dari 5</span>
+              4.8 <span class="tour-package-card__reviews">(94 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A sea voyage to explore several islands, go snorkeling, and enjoy more time out on the water.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $899/person</span>
+              <a href="tour-package-detail.html?id=raja-ampat-02" class="button button--ghost">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        
+        <!-- Tour Packages 3 -->
+        <article class="tour-package-card">
+          <img src="" alt="">
+          <span class="tour-package-card__category">BEACH</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Slow Days in Bali</h3>
+            <p class="tour-package-card__location">Bali, Indonesia</p>
+            <p class="tour-package-card__duration">5 Days / 4 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of beaches, local food, and a few places to visit without making the itinerary feel packed.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $649/person</span>
+              <a href="tour-package-detail.html?id=bali-03" class="button button--ghost">View Details</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="tour-package__cta">
+        <a href="tourpackage.html" class="button button--outline">View All</a>
+      </div>
+    </section>
+
+    <!-- ===== TRAVEL EXPERIENCES ===== -->
+    <section class="experiences" id="experiences">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">TRAVEL YOUR WAY</span>
+        <h2 class="section-heading__title">Choose a Trip That Fits You</h2>
+        <p class="section-heading__desc">
+          Everyone has a different way of enjoying a trip. Choose experiences based on what you want to do, not just the places you want to visit.
+        </p>
+      </div>
+
+      <div class="experiences-grid">
+
+        <!-- Experience 1 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">ADVENTURE</span>
+            <h3 class="experience-card__title">Go Further</h3>
+            <p class="experience-card__desc">
+              For a trip with more activities, new routes and a bit more of a challenge.
+            </p>
+            <a href="experiences.html?category=adventure" class="experience-card__link">Explore Adventure &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 2 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">BEACH ESCAPE</span>
+            <h3 class="experience-card__title">Take It Slow</h3>
+            <p class="experience-card__desc">
+              The beach, good food, and enough time not to check the clock every few minutes.
+            </p>
+            <a href="experiences.html?category=beach" class="experience-card__link">Explore Beach Trips &rarr;</a>
+          </div>
+        </article>
+                
+        <!-- Experience 3 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">CULTURAL JOURNEY</span>
+            <h3 class="experience-card__title">See How People Live</h3>
+            <p class="experience-card__desc">
+              Get to know a new place through its food, history, neighborhoods, and daily life.
+            </p>
+            <a href="experiences.html?category=cultural" class="experience-card__link">Explore Cultural Trips &rarr;</a>
+          </div>
+        </article>
+                
+        <!-- Experience 4 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">FAMILY VACATION</span>
+            <h3 class="experience-card__title">Easy Days Together</h3>
+            <p class="experience-card__desc">
+              Travel options featuring a more flexible itinerary and activities that can be enjoyed together.
+            </p>
+            <a href="experiences.html?category=family" class="experience-card__link">Explore Family Trips &rarr;</a>
+          </div>
+        </article>
+                        
+        <!-- Experience 5 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">HONEYMOON</span>
+            <h3 class="experience-card__title">Just the Two of You</h3>
+            <p class="experience-card__desc">
+              A trip for two featuring a more balanced mix of hotels, activities, and leisure time.
+            </p>
+            <a href="experiences.html?category=honeymoon" class="experience-card__link">Explore Honeymoon Trips &rarr;</a>
+          </div>
+        </article>
+                        
+        <!-- Experience 6 -->
+        <article class="experience-card">
+          <img src="" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">LUXURY TRAVEL</span>
+            <h3 class="experience-card__title">Travel a Little Better</h3>
+            <p class="experience-card__desc">
+              Hand-picked hotels, a more comfortable journey, and services that help minimize logistical hassles.
+            </p>
+            <a href="experiences.html?category=luxury" class="experience-card__link">Explore Luxury Trips &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-us" id="why-us">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">WHY WANDERLY</span>
+        <h2 class="section-heading__title">Less Planning. More Time Outside.</h2>
+        <p class="section-heading__desc">
+          We handle the time-consuming aspects of travel so you can focus more on the places you want to visit.
+        </p>
+      </div>
+
+      <div class="benefit-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card">
+          <h3 class="benefit-card__title">Trips We Would Actually Recommend</h3>
+          <p class="benefit-card__desc">
+            We select destinations and itineraries based on sensible experiences, rather than simply choosing places that are currently trending.
+          </p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit-card">
+          <h3 class="benefit-card__title">Advice From People Who Know the Place</h3>
+          <p class="benefit-card__desc">
+            Get recommendations that more closely reflect actual conditions at the destination.
+          </p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit-card">
+          <h3 class="benefit-card__title">Plans Can Change</h3>
+          <p class="benefit-card__desc">
+            Since travel plans do not always go according to the original schedule, we offer flexible booking options.
+          </p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-card">
+          <h3 class="benefit-card__title">Help When You Need It</h3>
+          <p class="benefit-card__desc">
+            Do you have any questions before or during your trip? Our team is ready to help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROMOTIONAL BANNER ===== -->
+    <section class="promo-banner" id="promo-banner">
+      <span class="promo-banner__eyebrow">READY TO GO?</span>
+      <h2 class="promo-banner__title">Your Next Trip Doesn't Need to Be Complicated.</h2>
+      <p class="promo-banner__desc">
+        Choose your destination, pick a time, and let us help handle the travel details.
+      </p>
+      <a href="booking.html" class="button button--primary">Start Planning</a>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="testimonials">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">TRAVELER STORIES</span>
+        <h2 class="section-heading__title">Loved by Travelers</h2>
+      </div>
+
+      <div class="testimonial-list">
+
+        <!-- Testimoni 1 -->
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            "What helped the most was actually the itinerary. The schedule wasn't too packed, so there was still time to explore on my own."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="" alt="">
+            <span class="testimonial-card__name">Maya R.</span>
+            <span class="testimonial-card__destination">Bali, Indonesia</span>
+            <span class="testimonial-card__rating">5.0</span>
+          </footer>
+        </blockquote>
+        
+        <!-- Testimoni 2 -->
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            "I usually find it quite confusing to decide on the order of places to visit. Here, everything is clear right from the start."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="" alt="">
+            <span class="testimonial-card__name">Daniel K.</span>
+            <span class="testimonial-card__destination">Kyoto, Japan</span>
+            <span class="testimonial-card__rating">4.9</span>
+          </footer>
+        </blockquote>
+                
+        <!-- Testimoni 3 -->
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            "The response was quick, and the information was quite detailed. We didn't have to do much research on our own."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="" alt="">
+            <span class="testimonial-card__name">Shofia L.</span>
+            <span class="testimonial-card__destination">Raja Ampat, Indonesia</span>
+            <span class="testimonial-card__rating">5.0</span>
+          </footer>
+        </blockquote>
+                        
+        <!-- Testimoni 4 -->
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            "The road trip was paced nicely. We didn't have to change locations every day, so the journey felt more relaxed."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="" alt="">
+            <span class="testimonial-card__name">Alex M.</span>
+            <span class="testimonial-card__destination">New Zealand</span>
+            <span class="testimonial-card__rating">4.8</span>
+          </footer>
+        </blockquote>
+                        
+        <!-- Testimoni 5 -->
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            "I like it because the choice of activities isn't forced. There are some days intentionally set aside to be more free-form."
+          </p>
+          <footer class="testimonial-card__author">
+            <img src="" alt="">
+            <span class="testimonial-card__name">Nadia P.</span>
+            <span class="testimonial-card__destination">Santorini, Greece</span>
+            <span class="testimonial-card__rating">5.0</span>
+          </footer>
+        </blockquote>
+
+      </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section class="blog" id="blog">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">TRAVEL NOTES</span>
+        <h2 class="section-heading__title">Useful Ideas Before You Go</h2>
+        <p class="section-heading__desc">
+          A quick guide to help you choose a destination, decide when to travel, and prepare what to bring.
+        </p>
+      </div>
+
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">TRAVEL GUIDE</span>
+            <h3 class="blog-card__title">Planning Your First Trip to Japan</h3>
+            <p class="blog-card__excerpt">
+              Things to consider before you go, ranging from choosing a city to planning your itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-12">September 12, 2026</time>
+              <span>8 min read</span>
+            </div>
+            <a href="blog-detail.html?id=japan-first-trip" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 2 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">DESTINATION</span>
+            <h3 class="blog-card__title">A Slower Way to Explore Bali</h3>
+            <p class="blog-card__excerpt">
+              Several ways to enjoy Bali without packing every day with a full itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-08">September 8, 2026</time>
+              <span>6 min read</span>
+            </div>
+            <a href="blog-detail.html?id=bali-slow-way" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 3 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">TRAVEL TIPS</span>
+            <h3 class="blog-card__title">How to Build an Itinerary That Isn't Exhausting</h3>
+            <p class="blog-card__excerpt">
+              You don't have to visit every place in a single trip. Here is how to create a more realistic itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-04">September 4, 2026</time>
+              <span>7 min read</span>
+            </div>
+            <a href="blog-detail.html?id=itinerary-tips" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 4 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">INDONESIA</span>
+            <h3 class="blog-card__title">Before You Visit Raja Ampat</h3>
+            <p class="blog-card__excerpt">
+              Some practical things to know before planning a trip to Raja Ampat.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-08-28">August 28, 2026</time>
+              <span>5 min read</span>
+            </div>
+            <a href="blog-detail.html?id=raja-ampat-guide" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter" id="newsletter">
+      <span class="newsletter__eyebrow">TRAVEL NOTES</span>
+      <h2 class="newsletter__title">A Few Good Travel Ideas, Once in a While.</h2>
+      <p class="newsletter__desc">
+        Get destination guides, travel tips, and selected recommendations delivered straight to your email.
+      </p>
+
+      <form action="" class="newsletter__form">
+        <label for="newsletter-email">Email address</label>
+        <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required>
+        <button type="submit" class="button button--primary">Subscribe</button>
+      </form>
+
+      <p class="newsletter__disclaimer">No spam. Just useful travel content.</p>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
