@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Packages — Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html" aria-current="page">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li aria-current="page">Japan, One City at a Time</li>
+      </ol>
+    </nav>
+
+    <!-- ===== PACKAGE HERO ===== -->
+    <section class="package-hero">
+      <img src="images/tourpackages/" alt="">
+      <div class="package-hero__overlay">
+        <span class="package-hero__category">CULTURE</span>
+        <h1 class="package-hero__title">Japan, One City at a Time</h1>
+        <p class="package-hero__location">Tokyo &amp; Kyoto, Japan</p>
+      </div>
+    </section>
+
+    <!-- ===== PACKAGE DETAIL (Content + Sidebar) ===== -->
+    <div class="package-detail">
+
+      <article class="package-detail__content">
+
+        <div class="package-detail__summary">
+          <span class="package-detail__duration">7 Days / 6 Nights</span>
+          <span class="package-detail__rating">
+            <span aria-hidden="true">★★★★★</span>
+            <span class="visually-hidden">Rating 4.9 dari 5</span>
+            4.9 <span>(128 reviews)</span>
+          </span>
+        </div>
+
+        <h2>Overview</h2>
+        <p>
+          A combination of two cities with contrasting paces: starting in bustling Tokyo and moving on to Kyoto for a more tranquil atmosphere. The itinerary is designed so you don't have to change cities every day, ensuring you have ample time to explore.
+        </p>
+
+        <h2>Itinerary</h2>
+        <ol class="itinerary-list">
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 1</span>
+            <h3 class="itinerary-list__title">Arrival in Tokyo</h3>
+            <p class="itinerary-list__desc">
+              Upon arrival at Narita Airport, transfer to the hotel in the Shinjuku area. The rest of the day is for resting.
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 2</span>
+            <h3 class="itinerary-list__title">Central Tokyo</h3>
+            <p class="itinerary-list__desc">
+              Visit Shibuya, Harajuku, and Meiji Shrine. The evening is free for independent exploration.
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 3</span>
+            <h3 class="itinerary-list__title">Asakusa &amp; Tokyo Skytree</h3>
+            <p class="itinerary-list__desc">
+              Visit Sensoji Temple in Asakusa, followed by the Tokyo Skytree area in the afternoon.
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 4</span>
+            <h3 class="itinerary-list__title">Travel to Kyoto</h3>
+            <p class="itinerary-list__desc">
+              Travel to Kyoto via Shinkansen. Check in at the hotel, followed by a leisurely walk in the Gion area.
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 5</span>
+            <h3 class="itinerary-list__title">Temples of Kyoto</h3>
+            <p class="itinerary-list__desc">
+              Visiting Fushimi Inari Shrine and Kinkaku-ji (Golden Pavilion).
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 6</span>
+            <h3 class="itinerary-list__title">Arashiyama</h3>
+            <p class="itinerary-list__desc">
+              Visit the Bamboo Grove and the area around the Katsura River. The evening is free for souvenir shopping.
+            </p>
+          </li>
+          <li class="itinerary-list__item">
+            <span class="itinerary-list__day">Day 7</span>
+            <h3 class="itinerary-list__title">Departure</h3>
+            <p class="itinerary-list__desc">
+              Transfer to Kansai Airport for the return flight.
+            </p>
+          </li>
+        </ol>
+        
+        <h2>Package Details</h2>
+        <dl class="package-includes">
+          <div class="package-includes__group">
+            <dt>What's Included</dt>
+            <dd>6-night accommodation (3-4 star hotels)</dd>
+            <dd>Intercity transportation (Shinkansen)</dd>
+            <dd>Airport transfers (arrival & departure)</dd>
+            <dd>Indonesian&ndash;speaking local guide</dd>
+          </div>
+          <div class="package-includes__group">
+            <dt>Not Included</dt>
+            <dd>International flight tickets</dd>
+            <dd>Lunch & dinner (unless otherwise specified)</dd>
+            <dd>Travel insurance</dd>
+            <dd>Personal expenses</dd>
+          </div>
+        </dl>
+
+      </article>
+
+      <aside class="package-detail__sidebar">
+        <div class="info-card">
+          <p class="info-card__price">From $1,199 <span>per person</span></p>
+          <p class="info-card__duration">7 Days / 6 Nights</p>
+
+          <a href="booking.html?package=japan-01" class="button button--primary info-card__cta">Continue to Booking</a>
+
+          <button class="button button--outline info-card__save" type="button" data-package-id="japan-01" aria-pressed="false">
+            Save Trip
+          </button>
+        </div>
+      </aside>
+
+    </div>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
