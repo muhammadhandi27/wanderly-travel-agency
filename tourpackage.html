@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Packages &ndash; Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+  
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" id="page-header">
+      <span class="page-header__eyebrow">CURATED JOURNEYS</span>
+      <h1 class="page-header__title">All Tour Packages</h1>
+      <p class="page-header__desc">
+        The itinerary has already been prepared; it simply needs to be adjusted to your travel preferences.
+      </p>
+    </section>
+    
+    <!-- ===== SEARCH & FILTER TOOLBAR -->
+    <form class="destinations-toolbar" role="search" aria-label="Search and filter tour package">
+      <div class="destinations-toolbar__search">
+        <label for="package-search" class="visually-hidden">Search a tour package</label>
+        <input type="search" id="package-search" name="package-search" placeholder="Search a tour package">
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter by category">
+        <button class="filter-bar__chip filter-bar__chip--active" type="button" data-filter="all">All</button>
+        <button class="filter-bar__chip" type="button" data-filter="culture">Culture</button>
+        <button class="filter-bar__chip" type="button" data-filter="adventure">Adventure</button>
+        <button class="filter-bar__chip" type="button" data-filter="beach">Beach</button>
+      </div>
+    </form>
+
+    <!-- ===== TOUR PACKAGE GRID ===== -->
+    <section class="tour-packages" id="tour-packages">
+      <div class="tour-package-grid">
+
+        <!-- Package 1 -->
+        <article class="tour-package-card" data-category="culture">
+          <img src="images/tourpackages/" alt="">
+          <span class="tour-package-card__category">CULTURE</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Japan, One City at a Time</h3>
+            <p class="tour-package-card__location">Tokyo &amp; Kyoto, Japan</p>
+            <p class="tour-package-card__duration">7 Days / 6 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of two cities with contrasting rhythms: starting with bustling Tokyo, then moving on to Kyoto for a more tranquil atmosphere.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $1,199/person</span>
+              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Package 2 -->
+        <article class="tour-package-card" data-category="culture">
+          <img src="images/tourpackages/" alt="">
+          <span class="tour-package-card__category">ADVENTURE</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Raja Ampat by Sea</h3>
+            <p class="tour-package-card__location">Raja Ampat, Indonesia</p>
+            <p class="tour-package-card__duration">6 Days / 5 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.8 dari 5</span>
+              4.8 <span class="tour-package-card__reviews">(94 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A sea voyage to explore several islands, go snorkeling, and enjoy more time out on the water.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $899/person</span>
+              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Package 3 -->
+        <article class="tour-package-card" data-category="culture">
+          <img src="images/tourpackages/" alt="">
+          <span class="tour-package-card__category">BEACH</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Slow Days in Bali</h3>
+            <p class="tour-package-card__location">Bali, Indonesia</p>
+            <p class="tour-package-card__duration">5 Days / 4 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of beaches, local food, and a few places to visit without making the itinerary feel packed.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $649/person</span>
+              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="tour-packages__empty-state" id="packages-empty" hidden>
+        No trips found.<br>
+        Try changing your destination or travel dates.
+      </p>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
