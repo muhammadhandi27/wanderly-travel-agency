@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning Your First Trip to Japan — Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li aria-current="page">Planning Your First Trip to Japan</li>
+      </ol>
+    </nav>
+
+    <!-- ===== BLOG ARTICLE ===== -->
+    <article class="blog-article">
+
+      <header class="blog-article__header">
+        <span class="blog-article__category">TRAVEL GUIDE</span>
+        <h1 class="blog-article__title">Planning Your First Trip to Japan</h1>
+        <div class="blog-article__meta">
+          <time datetime="2026-09-12">September 12, 202</time>
+          <span>8 min read</span>
+        </div>
+      </header>
+
+      <img src="images/blog/" alt="" class="blog-article__image">
+
+      <div class="blog-article__body">
+        <p>
+          Japan often feels like a country with an overwhelming number of choices: bustling cities, historic temples, mountains, and seasons that each offer a distinct atmosphere. For a first trip, trying to visit too many places in a short time can make the journey feel rushed.
+        </p>
+
+        <h2>Choose One or Two Cities as a Base</h2>
+        <p>
+          Tokyo and Kyoto make for a common combination for a first&ndash;time trip &mdash; one representing the modern side, the other the traditional. Staying in one area for several days, rather than moving between cities every day, allows more time for genuine exploration.
+        </p>
+
+        <h2>Consider the Season Before Setting a Date</h2>
+        <p>
+          Spring (March&ndash;April) and autumn (October&ndash;November) are the most sought-after seasons, so prices for accommodation and train tickets tend to be higher. Summer and winter are usually quieter, yet offer experiences that are just as appealing, depending on your interests.
+        </p>
+
+        <h2>Make the most of train transport.</h2>
+        <p>
+          Japan's railway network is known for its punctuality and for reaching almost all major tourist areas. For intercity travel&dash;such as from Tokyo to Kyoto&mdash;the Shinkansen is the most practical choice in terms of both time and comfort.
+        </p>
+
+        <p>
+          If you are interested in an itinerary that combines Tokyo and Kyoto without having to plan the schedule yourself, the <a href="tourpackage-detail.html?id=japan-01">Japan, One City at a Time</a> package could serve as a useful starting point for comparison with your own plans.
+        </p>
+      </div>
+
+    </article>
+
+    <!-- ===== RELATED TOUR PACKAGE ===== -->
+    <section class="related-packages">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">RELATED TOUR PACKAGE</span>
+        <h2 class="section-heading__title">Start Planning Your Japan Trip</h2>
+      </div>
+
+      <div class="tour-package-grid">
+        <article class="tour-package-card">
+          <img src="images/tourpackages/" alt="">
+          <span class="tour-package-card__category">CULTURE</span>
+          <div class="tour-package-card__body">
+            <h3 class="tour-package-card__title">Japan, One City at a Time</h3>
+            <p class="tour-package-card__location">Tokyo &amp; Kyoto, Japan</p>
+            <p class="tour-package-card__duration">7 Days / 6 Nights</p>
+            <p class="tour-package-card__rating">
+              <span aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Rating 4.9 dari 5</span>
+              4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
+            </p>
+            <p class="tour-package-card__desc">
+              A combination of two cities with contrasting rhythms: starting with bustling Tokyo, then moving on to Kyoto for a more tranquil atmosphere.
+            </p>
+            <div class="tour-package-card__footer">
+              <span class="tour-package-card__price">From $1,199/person</span>
+              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter" id="newsletter">
+      <span class="newsletter__eyebrow">TRAVEL NOTES</span>
+      <h2 class="newsletter__title">A Few Good Travel Ideas, Once in a While.</h2>
+      <p class="newsletter__desc">
+        Get destination guides, travel tips, and selected recommendations delivered straight to your email.
+      </p>
+
+      <form action="" class="newsletter__form">
+        <label for="newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required>
+        <button type="submit" class="button button--primary">Subscribe</button>
+      </form>
+
+      <p class="newsletter__disclaimer">No spam. Just useful travel content.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
