@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Experiences — Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html" aria-current="page">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" id="page-header">
+      <span class="page-header__eyebrow">CURATED JOURNEYS</span>
+      <h1 class="page-header__title">All Tour Packages</h1>
+      <p class="page-header__desc">
+        Everyone has a different way of enjoying a trip. Choose experiences based on what you want to do, not just the places you want to visit.
+      </p>
+    </section>
+
+    <!-- ===== EXPERIENCES GRID ===== -->
+    <section class="experiences" id="experiences">
+      <div class="experience-grid">
+
+        <!-- Experience 1 -->
+        <article class="experience-card" id="adventure">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">ADVENTURE</span>
+            <h2 class="experience-card__title">Go Further</h2>
+            <p class="experience-card__desc">
+              For a trip with more activities, new routes, and a bit more of a challenge.
+            </p>
+            <a href="tourpackage.html?category=adventure" class="experience-card__link">Explore Adventures &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 2 -->
+        <article class="experience-card" id="beach-escape">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">BEACH ESCAPE</span>
+            <h2 class="experience-card__title">Take It Slow</h2>
+            <p class="experience-card__desc">
+              The beach, good food, and enough time not to check the clock every few minutes.
+            </p>
+            <a href="tourpackage.html?category=beach" class="experience-card__link">Explore Beach Trips &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 3 -->
+        <article class="experience-card" id="cultural-journey">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">CULTURAL JOURNEY</span>
+            <h2 class="experience-card__title">See How People Live</h2>
+            <p class="experience-card__desc">
+              Get to know a new place through its food, history, neighborhoods, and daily life.
+            </p>
+            <a href="tourpackage.html?category=cultural" class="experience-card__link">Explore Cultural Trips &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 4 -->
+        <article class="experience-card" id="family-vacation">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">FAMILY VACATION</span>
+            <h2 class="experience-card__title">Easy Days Together</h2>
+            <p class="experience-card__desc">
+              Travel options featuring a more flexible itinerary and activities that can be enjoyed together.
+            </p>
+            <a href="tourpackage.html?category=family" class="experience-card__link">Explore Family Trips &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 5 -->
+        <article class="experience-card" id="honeymoon">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">HONEYMOON</span>
+            <h2 class="experience-card__title">Just the Two of You</h2>
+            <p class="experience-card__desc">
+              Perjalanan berdua dengan pilihan hotel, aktivitas,
+              dan waktu luang yang lebih seimbang.
+            </p>
+            <a href="tourpackage.html?category=honeymoon" class="experience-card__link">Explore Honeymoon Trips &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- Experience 6 -->
+        <article class="experience-card" id="luxury-travel">
+          <img src="images/experiences/" alt="">
+          <div class="experience-card__overlay">
+            <span class="experience-card__category">LUXURY TRAVEL</span>
+            <h2 class="experience-card__title">Travel a Little Better</h2>
+            <p class="experience-card__desc">
+              Hand-picked hotels, a more comfortable journey, and services that help minimize logistical hassles.
+            </p>
+            <a href="tourpackage.html?category=luxury" class="experience-card__link">Explore Luxury Trips &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
