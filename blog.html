@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Blog — Wanderly</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href=contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" id="page-header">
+      <span class="page-header__eyebrow">CURATED JOURNEYS</span>
+      <h1 class="page-header__title">All Tour Packages</h1>
+      <p class="page-header__desc">
+        A quick guide to help you choose a destination, decide when to travel, and prepare what to bring.
+      </p>
+    </section>
+
+    <!-- ===== SEARCH & FILTER TOOLBAR ===== -->
+    <form class="destinations-toolbar" role="search" aria-label="Cari dan filter artikel blog">
+      <div class="destinations-toolbar__search">
+        <label for="blog-search" class="visually-hidden">Search an article</label>
+        <input type="search" id="blog-search" name="blog-search" placeholder="Search an article">
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter berdasarkan kategori artikel">
+        <button type="button" class="filter-bar__chip filter-bar__chip--active" data-filter="all">All</button>
+        <button type="button" class="filter-bar__chip" data-filter="travel-guide">Travel Guide</button>
+        <button type="button" class="filter-bar__chip" data-filter="destination">Destination</button>
+        <button type="button" class="filter-bar__chip" data-filter="travel-tips">Travel Tips</button>
+        <button type="button" class="filter-bar__chip" data-filter="indonesia">Indonesia</button>
+      </div>
+    </form>
+
+    <!-- ===== BLOG GRID ===== -->
+    <section class="blog" id="blog">
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">TRAVEL GUIDE</span>
+            <h3 class="blog-card__title">Planning Your First Trip to Japan</h3>
+            <p class="blog-card__excerpt">
+              Things to consider before you go, ranging from choosing a city to planning your itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-12">September 12, 2026</time>
+              <span>8 min read</span>
+            </div>
+            <a href="blog-detail.html?id=japan-first-trip" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 2 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">DESTINATION</span>
+            <h3 class="blog-card__title">A Slower Way to Explore Bali</h3>
+            <p class="blog-card__excerpt">
+              Several ways to enjoy Bali without packing every day with a full itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-08">September 8, 2026</time>
+              <span>6 min read</span>
+            </div>
+            <a href="blog-detail.html?id=bali-slow-way" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 3 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">TRAVEL TIPS</span>
+            <h3 class="blog-card__title">How to Build an Itinerary That Isn't Exhausting</h3>
+            <p class="blog-card__excerpt">
+              You don't have to visit every place in a single trip. Here is how to create a more realistic itinerary.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-09-04">September 4, 2026</time>
+              <span>7 min read</span>
+            </div>
+            <a href="blog-detail.html?id=itinerary-tips" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+        
+        <!-- Article 4 -->
+        <article class="blog-card">
+          <img src="" alt="">
+          <div class="blog-card__body">
+            <span class="blog-card__category">INDONESIA</span>
+            <h3 class="blog-card__title">Before You Visit Raja Ampat</h3>
+            <p class="blog-card__excerpt">
+              Some practical things to know before planning a trip to Raja Ampat.
+            </p>
+            <div class="blog-card__meta">
+              <time datetime="2026-08-28">August 28, 2026</time>
+              <span>5 min read</span>
+            </div>
+            <a href="blog-detail.html?id=raja-ampat-guide" class="button button--ghost">Read Article</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="blog__empty-state" id="blog-empty" hidden>
+        No trips found.<br>
+        Try changing your destination or travel dates.
+      </p>
+    </section>
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
