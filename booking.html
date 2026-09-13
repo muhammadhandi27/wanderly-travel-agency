@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Trip — Wanderly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">Wanderly</a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta" aria-current="page">Book Your Trip</a>
+
+      <button type="button" class="navbar__toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ BREADCRUMB ============ -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Booking</li>
+      </ol>
+    </nav>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header" id="page-header">
+      <span class="page-header__eyebrow">BOOK YOUR TRIP</span>
+      <h1 class="page-header__title">Confirm Your Trip Details</h1>
+      <p class="page-header__desc">
+        Enter your trip details below. Our team will contact you regarding the next steps.
+      </p>
+    </section>
+
+    <!-- ============ BOOKING FORM ============ -->
+    <section class="booking">
+
+      <form class="booking-form" id="booking-form" novalidate>
+
+        <p class="booking-form__error-summary" id="booking-form-error" role="alert" hidden>
+          Please check the highlighted fields and try again.
+        </p>
+
+        <div class="form-field">
+          <label for="booking-name">Full Name</label>
+          <input type="text" id="booking-name" name="full-name" required>
+          <p class="form-field__error" id="booking-name-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-email">Email Address</label>
+          <input type="email" id="booking-email" name="email" required>
+          <p class="form-field__error" id="booking-email-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-phone">Phone Number</label>
+          <input type="tel" id="booking-phone" name="phone" required>
+          <p class="form-field__helper">Include country code, e.g. +62</p>
+          <p class="form-field__error" id="booking-phone-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-trip">Trip / Destination</label>
+          <input type="text" id="booking-trip" name="trip" placeholder="Which trip are you booking?" required>
+          <p class="form-field__error" id="booking-trip-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-date">Travel Date</label>
+          <input type="date" id="booking-date" name="travel-date" required>
+          <p class="form-field__error" id="booking-date-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-travelers">Number of Travelers</label>
+          <input type="number" id="booking-travelers" name="travelers" min="1" value="1" required>
+          <p class="form-field__error" id="booking-travelers-error" role="alert"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="booking-message">Special Requests</label>
+          <textarea id="booking-message" name="message" rows="4" placeholder="Any special requests for your trip?"></textarea>
+        </div>
+
+        <button type="submit" class="button button--primary booking-form__submit">Confirm Booking</button>
+      </form>
+
+      <div class="booking-success" id="booking-success" role="status" aria-live="polite" hidden>
+        <h2>Booking Received</h2>
+        <p>
+          Your trip request has been saved. We will follow up with
+          the next steps shortly.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ============ BOOKING HISTORY ============ -->
+    <section class="booking-history">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">YOUR BOOKINGS</span>
+        <h2 class="section-heading__title">Trips You've Requested</h2>
+      </div>
+
+      <p class="booking-history__empty" id="booking-history-empty">
+        You don't have any bookings yet.
+      </p>
+
+      <ul class="booking-history__list" id="booking-history-list"></ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
