@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Detail</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="header header--solid">
+    <nav class="navbar">
+      <a href="index.html" class="navbar__logo">
+        Wanderly
+      </a>
+
+      <ul class="navbar__menu">
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="tourpackage.html">Tour Packages</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <a href="wishlist.html" class="navbar__account" aria-label="Your Wishlist">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+
+      <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li aria-current="page">Go Further</li>
+      </ol>
+    </nav>
+
+    <!-- ===== EXPERIENCE HERO ===== -->
+    <section class="experience-hero">
+      <img src="images/experiences/" alt="" class="experience-hero__image">
+      <div class="experience-hero__overlay">
+        <span class="experience-hero__country">ADVENTURE</span>
+        <h1 class="experience-hero__title">Go Further</h1>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE CONTENT ===== -->
+    <article class="experience-detail">
+      <h2>What Adventure Trips Look Like</h2>
+      <p>
+        Wanderly&apos;s adventure-themed trips are designed for those who want to stay active&mdash;whether hiking, exploring new trails, or trying activities that are a bit off the beaten path. These itineraries typically strike a balance between physical activity and downtime, ensuring the experience remains enjoyable without leaving you exhausted.
+      </p>
+      <p>
+        Destinations such as Raja Ampat and the Swiss Alps are often chosen for this category, as they offer terrain and scenery that support outdoor activities.
+      </p>
+
+      <h2>Good to Know Before You Go</h2>
+      <p>
+        Most adventure packages require a basic to moderate level of fitness. Specific details&mdash;such as difficulty level, required gear, and estimated distance&mdash;are outlined on each package's respective page.
+      </p>
+
+    </article>
+
+    <!-- ===== RELATED TOUR PACKAGES ===== -->
+    <section class="related-packages">
+      <div class="section-heading">
+        <span class="section-heading__eyebrow">ADVENTURE PACKAGES</span>
+        <h2 class="section-heading__title">Packages for This Experience</h2>
+      </div>
+
+      <div class="tour-package-grid">
+        <article class="tour-package-card" data-category="adventure">
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/raja-ampat-sea.jpg" alt="Kapal wisata di perairan Raja Ampat" class="tour-package-card__image">
+            <span class="tour-package-card__category">ADVENTURE</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Raja Ampat, Indonesia</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 Days / 5 Nights</span>
+            </div>
+          </div>
+          <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.8 <span class="tour-package-card__reviews">(94 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">$899 <span>/ person</span></span>
+            </div>
+            <h3 class="tour-package-card__title">Raja Ampat by Sea</h3>
+            <p class="tour-package-card__desc">
+              A sea voyage to explore several islands, go snorkeling, and enjoy more time out on the water.
+            </p>
+            <a href="tourpackage-detail.html?id=raja-ampat-02" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Wanderly</span>
+        <p class="footer__desc">
+          Wanderly helps you discover destinations and plan trips in a simpler way.
+        </p>
+      </div>
+
+      <nav class="footer__column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="tourpackage.html">Tour Packages</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="blog.html">Travel Guides</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#story">Our Story</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="booking.html#help">Booking Help</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__column">
+        <h3>Contact</h3>
+        <p>hello@wanderly.example</p>
+        <p>+62 213 555 148</p>
+        <p>Jakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
+      <ul class="footer__social">
+        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
