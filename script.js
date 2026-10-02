@@ -35,7 +35,7 @@ function initFaqAccordion() {
 
   questions.forEach((button) => {
     button.addEventListener("click", () => {
-      const isOpen = button.getAttribute("aria-expanded" === "true");
+      const isOpen = button.getAttribute("aria-expanded") === "true";
 
       // Tutup semua FAQ lain
       questions.forEach((otherButton) => {
