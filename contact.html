@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -57,159 +60,166 @@
       </p>
     </section>
 
-    <!-- ===== CONTACT FORM ===== -->
-    <section class="contact">
+    <div class="contact-layout">
+      <!-- ===== CONTACT FORM ===== -->
+      <section class="contact">
 
-      <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" novalidate>
 
-        <p class="contact-form__error-summary" id="contact-form-error" role="alert" hidden>
-          Please check the highlighted fields and try again.
-        </p>
+          <p class="contact-form__error-summary" id="contact-form-error" role="alert" hidden>
+            Please check the highlighted fields and try again.
+          </p>
 
-        <div class="form-field">
-          <label for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" placeholder="Your name" required>
-          <p class="form-field__error" id="contact-name-error" role="alert"></p>
-        </div>
-
-        <div class="form-field">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Your email address" required>
-          <p class="form-field__error" id="contact-email-error" role="alert"></p>
-        </div>
-
-        <div class="form-field">
-          <label for="contact-destination">Destination</label>
-          <input type="text" id="contact-destination" name="destination" placeholder="Where do you want to go?">
-        </div>
-
-        <div class="form-field">
-          <label for="contact-date">Travel Date</label>
-          <input type="text" id="contact-date" name="travel-date" placeholder="When are you planning to travel?">
-        </div>
-
-        <div class="form-field">
-          <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="5" placeholder="Tell us a little about your trip..." required></textarea>
-          <p class="form-field__error" id="contact-message-error" role="alert"></p>
-        </div>
-
-        <button type="submit" class="button button--primary contact-form__submit">Send Inquiry</button>
-      </form>
-
-      <div class="contact-success" id="contact-success" role="status" aria-live="polite" hidden>
-        <h2>Thanks for reaching out.</h2>
-        <p>We'll get back to you shortly.</p>
-      </div>
-
-    </section>
-
-    <!-- ===== FAQ ===== -->
-    <section class="faq" id="faq">
-      <div class="section-heading">
-        <span class="section-heading__eyebrow">FAQ</span>
-        <h2 class="section-heading__title">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <h3 class="faq-item__heading">
-            <button
-              type="button"
-              class="faq-item__question"
-              id="faq-question-1"
-              aria-expanded="false"
-              aria-controls="faq-answer-1"
-            >
-              Do you offer custom itineraries?
-            </button>
-          </h3>
-          <div class="faq-item__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden>
-            <p>
-              Yes. If the available packages do not quite meet your needs, we can help customize the itinerary based on duration, budget, and the type of trip.
-            </p>
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+            <p class="form-field__error" id="contact-name-error" role="alert"></p>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <h3 class="faq-item__heading">
-            <button
-              type="button"
-              class="faq-item__question"
-              id="faq-question-2"
-              aria-expanded="false"
-              aria-controls="faq-answer-2"
-            >
-              Can I change my booking?
-            </button>
-          </h3>
-          <div class="faq-item__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
-            <p>
-              This depends on the package type and the partner's policy. Details regarding changes will be displayed before the booking is confirmed.
-            </p>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="Your email address" required>
+            <p class="form-field__error" id="contact-email-error" role="alert"></p>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <h3 class="faq-item__heading">
-            <button
-              type="button"
-              class="faq-item__question"
-              id="faq-question-3"
-              aria-expanded="false"
-              aria-controls="faq-answer-3"
-            >
-              Are flights included?
-            </button>
-          </h3>
-          <div class="faq-item__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
-            <p>
-              Not all packages include flights. Information regarding what is included will be provided in the details of each package.
-            </p>
+          <div class="form-field">
+            <label for="contact-destination">Destination</label>
+            <input type="text" id="contact-destination" name="destination" placeholder="Where do you want to go?">
           </div>
-        </div>
 
-        <div class="faq-item">
-          <h3 class="faq-item__heading">
-            <button
-              type="button"
-              class="faq-item__question"
-              id="faq-question-4"
-              aria-expanded="false"
-              aria-controls="faq-answer-4"
-            >
-              Can I travel alone?
-            </button>
-          </h3>
-          <div class="faq-item__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>
-            <p>
-              Certainly. Some packages are indeed better suited for solo travelers, while others can be tailored for couples or families.
-            </p>
+          <div class="form-field">
+            <label for="contact-date">Travel Date</label>
+            <input type="date" id="contact-date" name="travel-date">
           </div>
-        </div>
 
-        <div class="faq-item">
-          <h3 class="faq-item__heading">
-            <button
-              type="button"
-              class="faq-item__question"
-              id="faq-question-5"
-              aria-expanded="false"
-              aria-controls="faq-answer-5"
-            >
-              How early should I book?
-            </button>
-          </h3>
-          <div class="faq-item__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden>
-            <p>
-              It is best to do so several weeks to several months before departure, especially for destinations that are popular during the holiday season.
-            </p>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell us a little about your trip..." required></textarea>
+            <p class="form-field__error" id="contact-message-error" role="alert"></p>
           </div>
+
+          <button type="submit" class="button button--primary contact-form__submit">Send Inquiry</button>
+        </form>
+
+        <div class="contact-success" id="contact-success" role="status" aria-live="polite" hidden>
+          <h2>Thanks for reaching out.</h2>
+          <p>We'll get back to you shortly.</p>
         </div>
 
-      </div>
-    </section>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="faq" id="faq">
+        <div class="section-heading">
+          <span class="section-heading__eyebrow">FAQ</span>
+          <h2 class="section-heading__title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <h3 class="faq-item__heading">
+              <button
+                type="button"
+                class="faq-item__question"
+                id="faq-question-1"
+                aria-expanded="false"
+                aria-controls="faq-answer-1"
+              >
+                Do you offer custom itineraries?
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="faq-item__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" hidden>
+              <p>
+                Yes. If the available packages do not quite meet your needs, we can help customize the itinerary based on duration, budget, and the type of trip.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__heading">
+              <button
+                type="button"
+                class="faq-item__question"
+                id="faq-question-2"
+                aria-expanded="false"
+                aria-controls="faq-answer-2"
+              >
+                Can I change my booking?
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="faq-item__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
+              <p>
+                This depends on the package type and the partner's policy. Details regarding changes will be displayed before the booking is confirmed.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__heading">
+              <button
+                type="button"
+                class="faq-item__question"
+                id="faq-question-3"
+                aria-expanded="false"
+                aria-controls="faq-answer-3"
+              >
+                Are flights included?
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="faq-item__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
+              <p>
+                Not all packages include flights. Information regarding what is included will be provided in the details of each package.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__heading">
+              <button
+                type="button"
+                class="faq-item__question"
+                id="faq-question-4"
+                aria-expanded="false"
+                aria-controls="faq-answer-4"
+              >
+                Can I travel alone?
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="faq-item__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>
+              <p>
+                Certainly. Some packages are indeed better suited for solo travelers, while others can be tailored for couples or families.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__heading">
+              <button
+                type="button"
+                class="faq-item__question"
+                id="faq-question-5"
+                aria-expanded="false"
+                aria-controls="faq-answer-5"
+              >
+                How early should I book?
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="faq-item__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden>
+              <p>
+                It is best to do so several weeks to several months before departure, especially for destinations that are popular during the holiday season.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
 
   </main>
 

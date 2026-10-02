@@ -56,12 +56,12 @@
         <span class="blog-article__category">TRAVEL GUIDE</span>
         <h1 class="blog-article__title">Planning Your First Trip to Japan</h1>
         <div class="blog-article__meta">
-          <time datetime="2026-09-12">September 12, 202</time>
+          <time datetime="2026-09-12">September 12, 2026</time>
           <span>8 min read</span>
         </div>
       </header>
 
-      <img src="images/blog/" alt="" class="blog-article__image">
+      <img src="images/blog/japan-guide-hero.jpg" alt="" class="blog-article__image">
 
       <div class="blog-article__body">
         <p>
@@ -98,25 +98,31 @@
       </div>
 
       <div class="tour-package-grid">
-        <article class="tour-package-card">
-          <img src="images/tourpackages/" alt="">
-          <span class="tour-package-card__category">CULTURE</span>
+        <article class="tour-package-card" data-category="cultural">
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/japan.jpg" alt="">
+            <span class="tour-package-card__category">CULTURE</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Tokyo &amp; Kyoto, Japan</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 Days / 6 Nights</span>
+            </div>
+          </div>
           <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">From $1,199 <span>/ person</span></span>
+            </div>
             <h3 class="tour-package-card__title">Japan, One City at a Time</h3>
-            <p class="tour-package-card__location">Tokyo &amp; Kyoto, Japan</p>
-            <p class="tour-package-card__duration">7 Days / 6 Nights</p>
-            <p class="tour-package-card__rating">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="visually-hidden">Rating 4.9 dari 5</span>
-              4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
-            </p>
             <p class="tour-package-card__desc">
               A combination of two cities with contrasting rhythms: starting with bustling Tokyo, then moving on to Kyoto for a more tranquil atmosphere.
             </p>
-            <div class="tour-package-card__footer">
-              <span class="tour-package-card__price">From $1,199/person</span>
-              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
-            </div>
+            <a href="tourpackage-detail.html?id=japan-01" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
       </div>

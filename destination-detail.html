@@ -44,14 +44,14 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol class="breadcrumb__list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="destination.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
         <li aria-current="page">Bali</li>
       </ol>
     </nav>
 
     <!-- ===== DESTINATION HERO ===== -->
     <section class="destination-hero">
-      <img src="" alt="">
+      <img src="images/destination/bali-hero.jpg" alt="" class="destination-hero__image">
       <div class="destination-hero__overlay">
         <span class="destination-hero__country">Indonesia</span>
         <h1 class="destination-hero__title">Bali</h1>
@@ -100,10 +100,10 @@
     <section class="destination-gallery">
       <h2 class="destination-gallery__title">Photo Gallery</h2>
       <div class="destination-gallery__grid">
-        <img src="images/destination/" alt="">
-        <img src="images/destination/" alt="">
-        <img src="images/destination/" alt="">
-        <img src="images/destination/" alt="">
+        <img src="images/destination/bali-1.jpg" alt="">
+        <img src="images/destination/bali-2.jpg" alt="">
+        <img src="images/destination/bali-3.jpg" alt="">
+        <img src="images/destination/bali-4.jpg" alt="">
       </div>
     </section>
 
@@ -115,25 +115,31 @@
       </div>
 
       <div class="tour-package-grid">
-        <article class="tour-package-card">
-          <img src="images/tourpackages/" alt="">
-          <span class="tour-package__category">BEACH</span>
+        <article class="tour-package-card" data-category="beach">
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/bali-slow.jpg" alt="">
+            <span class="tour-package-card__category">BEACH</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bali, Indonesia</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 Days / 4 Nights</span>
+            </div>
+          </div>
           <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">From $649 <span>/ person</span></span>
+            </div>
             <h3 class="tour-package-card__title">Slow Days in Bali</h3>
-            <p class="tour-package-card__location">Bali, Indonesia</p>
-            <p class="tour-package-card__duration">5 Days / 4 Nights</p>
-            <p class="tour-package-card__rating">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="visually-hidden">Rating 4.9 dari 5</span>
-              4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
-            </p>
             <p class="tour-package-card__desc">
               A combination of beaches, local food, and a few places to visit without making the itinerary feel packed.
             </p>
-            <div class="tour-package-card__footer">
-              <span class="tour-package-card__price">From $649/person</span>
-              <a href="tourpackage-detail.html" class="button button--ghost">View Details</a>
-            </div>
+            <a href="tour-package-detail.html?id=bali-03" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
       </div>

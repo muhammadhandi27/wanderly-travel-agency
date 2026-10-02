@@ -2777,7 +2777,7 @@ button i {
 }
 
 /* ===== 38. POLISH — Large Desktop Refinement ===== */
-/* @media (min-width: 1440px) {
+@media (min-width: 1440px) {
   .destination-grid,
   .tour-package-grid,
   .experience-grid,
@@ -2801,7 +2801,7 @@ button i {
   .newsletter__title {
     max-width: 720px;
   }
-} */
+}
 
 /* ===== 39. POLISH — Orphan Control pada Heading ===== */
 h1,

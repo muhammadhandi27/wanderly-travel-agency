@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -53,6 +56,7 @@
     <form class="destinations-toolbar" role="search" aria-label="Search and filter tour package">
       <div class="destinations-toolbar__search">
         <label for="package-search" class="visually-hidden">Search a tour package</label>
+        <i class="fa-solid fa-magnifying-glass tour-package-toolbar__search-icon" aria-hidden="true"></i>
         <input type="search" id="package-search" name="package-search" placeholder="Search a tour package">
       </div>
 
@@ -68,72 +72,90 @@
     <section class="tour-packages" id="tour-packages">
       <div class="tour-package-grid">
 
-        <!-- Package 1 -->
+         <!-- Tour Packages 1 -->
         <article class="tour-package-card" data-category="cultural">
-          <img src="images/tourpackages/" alt="">
-          <span class="tour-package-card__category">CULTURE</span>
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/japan.jpg" alt="">
+            <span class="tour-package-card__category">CULTURE</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Tokyo &amp; Kyoto, Japan</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 Days / 6 Nights</span>
+            </div>
+          </div>
           <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">From $1,199 <span>/ person</span></span>
+            </div>
             <h3 class="tour-package-card__title">Japan, One City at a Time</h3>
-            <p class="tour-package-card__location">Tokyo &amp; Kyoto, Japan</p>
-            <p class="tour-package-card__duration">7 Days / 6 Nights</p>
-            <p class="tour-package-card__rating">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="visually-hidden">Rating 4.9 dari 5</span>
-              4.9 <span class="tour-package-card__reviews">(128 reviews)</span>
-            </p>
             <p class="tour-package-card__desc">
               A combination of two cities with contrasting rhythms: starting with bustling Tokyo, then moving on to Kyoto for a more tranquil atmosphere.
             </p>
-            <div class="tour-package-card__footer">
-              <span class="tour-package-card__price">From $1,199/person</span>
-              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
-            </div>
+            <a href="tourpackage-detail.html?id=japan-01" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
 
-        <!-- Package 2 -->
-        <article class="tour-package-card" data-category="culture">
-          <img src="images/tourpackages/" alt="">
-          <span class="tour-package-card__category">ADVENTURE</span>
+        <!-- Tour Packages 2 -->
+        <article class="tour-package-card" data-category="adventure">
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/raja-ampat-sea.jpg" alt="">
+            <span class="tour-package-card__category">ADVENTURE</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Raja Ampat, Indonesia</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 Days / 5 Nights</span>
+            </div>
+          </div>
           <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.8 <span class="tour-package-card__reviews">(94 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">From $899 <span>/ person</span></span>
+            </div>
             <h3 class="tour-package-card__title">Raja Ampat by Sea</h3>
-            <p class="tour-package-card__location">Raja Ampat, Indonesia</p>
-            <p class="tour-package-card__duration">6 Days / 5 Nights</p>
-            <p class="tour-package-card__rating">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="visually-hidden">Rating 4.8 dari 5</span>
-              4.8 <span class="tour-package-card__reviews">(94 reviews)</span>
-            </p>
             <p class="tour-package-card__desc">
               A sea voyage to explore several islands, go snorkeling, and enjoy more time out on the water.
             </p>
-            <div class="tour-package-card__footer">
-              <span class="tour-package-card__price">From $899/person</span>
-              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
-            </div>
+            <a href="tourpackage-detail.html?id=raja-ampat-02" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
-        
-        <!-- Package 3 -->
-        <article class="tour-package-card" data-category="culture">
-          <img src="images/tourpackages/" alt="">
-          <span class="tour-package-card__category">BEACH</span>
+
+        <!-- Tour Packages 3 -->
+        <article class="tour-package-card" data-category="beach">
+          <div class="tour-package-card__media">
+            <img src="images/tourpackages/bali-slow.jpg" alt="">
+            <span class="tour-package-card__category">BEACH</span>
+            <div class="tour-package-card__info-bar">
+              <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bali, Indonesia</span>
+              <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 Days / 4 Nights</span>
+            </div>
+          </div>
           <div class="tour-package-card__body">
+            <div class="tour-package-card__meta-row">
+              <span class="tour-package-card__rating">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
+              </span>
+              <span class="tour-package-card__price">From $649 <span>/ person</span></span>
+            </div>
             <h3 class="tour-package-card__title">Slow Days in Bali</h3>
-            <p class="tour-package-card__location">Bali, Indonesia</p>
-            <p class="tour-package-card__duration">5 Days / 4 Nights</p>
-            <p class="tour-package-card__rating">
-              <span aria-hidden="true">★★★★★</span>
-              <span class="visually-hidden">Rating 4.9 dari 5</span>
-              4.9 <span class="tour-package-card__reviews">(156 reviews)</span>
-            </p>
             <p class="tour-package-card__desc">
               A combination of beaches, local food, and a few places to visit without making the itinerary feel packed.
             </p>
-            <div class="tour-package-card__footer">
-              <span class="tour-package-card__price">From $649/person</span>
-              <a href="tourpackage-detail.html?id=japan-01" class="button">View Details</a>
-            </div>
+            <a href="tourpackage-detail.html?id=bali-03" class="button button--dark tour-package-card__cta">
+              View Details
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
 

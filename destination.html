@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -53,7 +56,8 @@
     <form action="" class="destinations-toolbar" role="search" aria-label="Search and filter destination">
       <div class="destinations-toolbar__search">
         <label for="destination-search" class="visually-hidden">Search a destination</label>
-        <input type="search" name="destination-search" id="destination-search">
+        <i class="fa-solid fa-magnifying-glass destinations-toolbar__search-icon" aria-hidden="true"></i>
+        <input type="search" name="destination-search" id="destination-search" placeholder="Search a destination">
       </div>
 
       <div class="filter-bar" role="group" aria-label="Filter by region">
@@ -69,110 +73,122 @@
       <div class="destination-grid">
 
         <!-- DESTINATION 1 -->
-        <article class="destination-card">
-          <img src="" alt="A tropical beach in Bali with coconut trees" class="destination-card__image">
+        <article class="destination-card" data-region="asia">
+          <div class="destination-card__media">
+            <img src="images/destination/bali.png" alt="A tropical beach in Bali with coconut trees" class="destination-card__image">
+            <span class="destination-card__badge">24 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">Bali</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">Bali</h3>
+              <span class="destination-card__price">From $499</span>
+            </div>
             <p class="destination-card__country">Indonesia</p>
             <p class="destination-card__desc">
               Beaches, food, culture, and activity options easily tailored to various travel styles.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $499</span>
-              <span class="destination-card__tour-count">24 experiences</span>
-            </div>
             <a href="destination-detail.html?id=bali" class="button button--ghost">Explore Bali</a>
           </div>
         </article>
 
         <!-- DESTINATION 2 -->
         <article class="destination-card">
-          <img src="" alt="A historic temple in Kyoto, Japan" class="destination-card__image">
+          <div class="destination-card__media">
+            <img src="images/destination/kyoto.jpg" alt="A historic temple in Kyoto, Japan" class="destination-card__image">
+            <span class="destination-card__badge">18 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">Kyoto</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">Kyoto</h3>
+              <span class="destination-card__price">From $899</span>
+            </div>
             <p class="destination-card__country">Japan</p>
             <p class="destination-card__desc">
               A city with historic temples, quiet side streets, and culture that is still felt in everyday life.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $899</span>
-              <span class="destination-card__tour-count">18 experiences</span>
-            </div>
             <a href="destination-detail.html?id=kyoto" class="button button--ghost">Explore Kyoto</a>
           </div>
         </article>
 
         <!-- DESTINATION 3 -->
         <article class="destination-card">
-          <img src="" alt="Swiss Alps mountains with a small village" class="destination-card__image">
+          <div class="destination-card__media">
+            <img src="images/destination/swiss-alps.jpg" alt="Swiss Alps mountains with a small village" class="destination-card__image">
+            <span class="destination-card__badge">15 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">Swiss Alps</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">Swiss Alps</h3>
+              <span class="destination-card__price">From $1,299</span>
+            </div>
             <p class="destination-card__country">Switzerland</p>
             <p class="destination-card__desc">
               Mountains, small villages, and travel routes with scenery that is hard to miss.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $1,299</span>
-              <span class="destination-card__tour-count">15 experiences</span>
-            </div>
             <a href="destination-detail.html?id=swiss-alps" class="button button--ghost">Explore Swiss Alps</a>
           </div>
         </article>
 
         <!-- DESTINATION 4 -->
         <article class="destination-card">
-          <img src="" alt="The clear waters of Raja Ampat from above" class="destination-card__image">
+          <div class="destination-card__media">
+            <img src="images/destination/raja-ampat.jpg" alt="The clear waters of Raja Ampat from above" class="destination-card__image">
+            <span class="destination-card__badge">12 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">Raja Ampat</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">Raja Ampat</h3>
+              <span class="destination-card__price">From $899</span>
+            </div>
             <p class="destination-card__country">Indonesia</p>
             <p class="destination-card__desc">
               Crystal-clear waters, small islands, and one of the best destinations to enjoy underwater life.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $899</span>
-              <span class="destination-card__tour-count">12 experiences</span>
-            </div>
             <a href="destination-detail.html?id=raja-ampat" class="button button--ghost">Explore Raja Ampat</a>
           </div>
         </article>
 
         <!-- DESTINATION 5 -->
         <article class="destination-card">
-          <img src="" alt="The distinctive blue-and-white buildings of Santorini, Greece." class="destination-card__image">
+          <div class="destination-card__media">
+            <img src="images/destination/santorini.jpg" alt="The distinctive blue-and-white buildings of Santorini, Greece." class="destination-card__image">
+            <span class="destination-card__badge">16 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">Santorini</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">Santorini</h3>
+              <span class="destination-card__price">From $1,099</span>
+            </div>
             <p class="destination-card__country">Greece</p>
             <p class="destination-card__desc">
               White architecture, the Aegean Sea, and an island atmosphere best enjoyed without rushing.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $1,099</span>
-              <span class="destination-card__tour-count">16 experiences</span>
-            </div>
             <a href="destination-detail.html?id=santorini" class="button button--ghost">Explore Santorini</a>
           </div>
         </article>
 
         <!-- DESTINATION 6 -->
         <article class="destination-card">
-          <img src="" alt="The vast landscape of mountains and lakes in New Zealand." class="destination-card__image">
+          <div class="destination-card__media">
+            <img src="images/destination/new-zealand.jpg" alt="The vast landscape of mountains and lakes in New Zealand." class="destination-card__image">
+            <span class="destination-card__badge">21 experiences</span>
+          </div>
           <div class="destination-card__body">
-            <h3 class="destination-card__title">New Zealand</h3>
+            <div class="destination-card__heading">
+              <h3 class="destination-card__title">New Zealand</h3>
+              <span class="destination-card__price">From $1,499</span>
+            </div>
             <p class="destination-card__country">New Zealand</p>
             <p class="destination-card__desc">
               Expansive landscapes, lakes, mountains, and road trips &mdash; perfect for those who want to explore extensively.
             </p>
-            <div class="destination-card__meta">
-              <span class="destination-card__price">From $1,499</span>
-              <span class="destination-card__tour-count">21 experiences</span>
-            </div>
             <a href="destination-detail.html?id=new-zealand" class="button button--ghost">Explore New Zealand</a>
           </div>
         </article>
 
       </div>
 
-      <p class="destinations__empty-state" id="destinations-empty">
+      <p class="destinations__empty-state" id="destinations-empty" hidden>
         No trips found.<br>
         Try changing your destination or travel dates.
       </p>
