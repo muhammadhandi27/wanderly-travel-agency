@@ -292,6 +292,8 @@ body:has(.header--solid) main {
 }
 
 .navbar__toggle {
+  position: relative;
+  z-index: 111;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -303,7 +305,7 @@ body:has(.header--solid) main {
 .navbar__toggle span {
   display: block;
   height: 2px;
-  width: 70%;
+  width: 80%;
   background-color: var(--color-white);
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
@@ -320,16 +322,23 @@ body:has(.header--solid) main {
 
 /* Dropdown Menu Mobile - Default Hidden */
 .navbar__menu {
-  display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
   right: 0;
-  left: 0;
+  bottom: 0;
+  z-index: 110;
+  width: 70%;
+  max-width: 320px;
+  display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   background-color: var(--color-primary);
-  padding: var(--space-md);
-  box-shadow: var(--shadow-md);
+  padding: calc(var(--space-xl) + env(safe-area-inset-top, 0px)) var(--space-md) var(--space-md);
+  box-shadow: var(--shadow-lg);
+  overflow-y: auto;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform var(--transition-normal), visibility var(--transition-normal);
 }
 
 .navbar__menu a {
@@ -337,6 +346,26 @@ body:has(.header--solid) main {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 16px;
+  transition: color var(--transition-fast);
+}
+
+.navbar__menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: transform var(--transition-fast);
+}
+
+.navbar__menu a:hover {
+  color: var(--color-gold);
+}
+
+.navbar__menu a:hover::after {
+  width: 100%;
 }
 
 .navbar__menu a[aria-current="page"] {
@@ -345,7 +374,23 @@ body:has(.header--solid) main {
 
 /* Munculkan Menu Mobile Saat Toogle Terbuka */
 .navbar:has(.navbar__toggle[aria-expanded="true"]) .navbar__menu {
-  display: flex;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  background-color: rgba(11, 31, 38, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.header:has(.navbar__toggle[aria-expanded="true"]) .navbar__overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Desktop Navbar */
@@ -637,6 +682,11 @@ button i {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .navbar__menu,
+  .navbar__overlay {
+    transition: none;
+  }
+
   .button,
   .button i, 
   .button--ghost::after {
@@ -651,6 +701,11 @@ button i {
 
   .button--primary::before {
     display: none;
+  }
+
+  .slider__btn,
+  .slider__dot {
+    transition: none;
   }
 }
 
@@ -1768,13 +1823,6 @@ button i {
 @media (min-width: 1024px) {
   .slider--mobile-only .slider__track {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slider__btn,
-  .slider__dot {
-    transition: none;
   }
 }
 
