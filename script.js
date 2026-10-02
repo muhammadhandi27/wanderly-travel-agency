@@ -28,7 +28,36 @@ function initNavbarToggle() {
   });
 }
 
+// ===== 2. FAQ ACCORDION =====
+function initFaqAccordion() {
+  const questions = document.querySelectorAll(".faq-item__question");
+  if (!questions.length) return;
+
+  questions.forEach((button) => {
+    button.addEventListener("click", () => {
+      const isOpen = button.getAttribute("aria-expanded" === "true");
+
+      // Tutup semua FAQ lain
+      questions.forEach((otherButton) => {
+        if (otherButton === button) return;
+
+        otherButton.setAttribute("aria-expanded", "false");
+        const otherAnswer = document.getElementById(otherButton.getAttribute("aria-controls"));
+        if (otherAnswer) otherAnswer.hidden = true;
+      });
+
+      // Toggle FAQ yang diklik 
+      const answer = document.getElementById(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", String(!isOpen));
+      if (answer) answer.hidden = isOpen;
+    });
+  });
+}
+
+
+
 // Inisialisasi - Jalankan semua fungsi setelah HTML siap
 document.addEventListener("DOMContentLoaded", () => {
   initNavbarToggle();
+  initFaqAccordion();
 })
