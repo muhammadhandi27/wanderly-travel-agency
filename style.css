@@ -349,7 +349,13 @@ body:has(.header--solid) main {
   transition: color var(--transition-fast);
 }
 
-.navbar__menu a::after {
+.navbar__link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.navbar__link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -357,14 +363,14 @@ body:has(.header--solid) main {
   width: 0;
   height: 2px;
   background-color: var(--color-gold);
-  transition: transform var(--transition-fast);
+  transition: width var(--transition-fast);
 }
 
 .navbar__menu a:hover {
   color: var(--color-gold);
 }
 
-.navbar__menu a:hover::after {
+.navbar__link:hover::after {
   width: 100%;
 }
 
@@ -408,6 +414,10 @@ body:has(.header--solid) main {
     background-color: transparent;
     padding: 0;
     box-shadow: none;
+    width: auto;
+    max-width: none;
+    transform: none;
+    visibility: visible;
   }
 
   .navbar__account {
