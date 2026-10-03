@@ -171,9 +171,70 @@ function initSliders() {
   });
 }
 
+// ===== 4. FILTER & SEARCH =====
+function initFilterToolbar() {
+  const toolbar = document.querySelector(".destinations-toolbar");
+  if (!toolbar) return;
+
+  toolbar.addEventListener("submit", (event) => event.preventDefault());
+
+  const searchInput = toolbar.querySelector("input[type='search']");
+  const chips = Array.from(toolbar.querySelectorAll(".filter-bar__chip"));
+  const section = toolbar.nextElementSibling;
+  if (!section) return;
+
+  const cards = Array.from(section.querySelectorAll("[data-region], [data-category]"));
+  const emptyState = section.querySelector('[class*="__empty-state"]');
+
+  let activeFilter = "all";
+
+  function matchesFilter(card) {
+    if (activeFilter === "all") return true;
+    const value = card.dataset.region || card.dataset.category;
+    return value === activeFilter;
+  }
+
+  function matchesSearch(card) {
+    const term = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    if (!term) return true;
+
+    const titleEl = card.querySelector('[class*="__title"]');
+    const title = titleEl ? titleEl.textContent.toLowerCase() : "";
+    return title.includes(term);
+  }
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const shouldShow = matchesFilter(card) && matchesSearch(card);
+      card.hidden = !shouldShow;
+      if (shouldShow) visibleCount += 1;
+    });
+
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("filter-bar__chip--active"));
+      chip.classList.add("filter-bar__chip--active");
+      activeFilter = chip.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  applyFilters();
+}
+
 // Inisialisasi - Jalankan semua fungsi setelah HTML siap
 document.addEventListener("DOMContentLoaded", () => {
   initNavbarToggle();
   initFaqAccordion();
   initSliders();
-})
+  initFilterToolbar();
+});

@@ -1205,6 +1205,12 @@ button i {
   color: var(--color-primary);
 }
 
+.destination-card[hidden],
+.tour-package-card[hidden],
+.blog-card[hidden] {
+  display: none;
+}
+
 /* ===== 15. TOUR PACKAGE CARD ===== */
 .tour-package-card {
   border-radius: var(--radius-md);
