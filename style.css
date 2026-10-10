@@ -2252,7 +2252,7 @@ button i {
   }
 }
 
-/* ===== 26. EMPTY STATE ===== */
+/* ===== 26.a EMPTY STATE ===== */
 .destinations__empty-state,
 .tour-packages__empty-state,
 .blog__empty-state {
@@ -2261,6 +2261,30 @@ button i {
   margin-inline: auto;
   padding: var(--space-xl) var(--space-sm);
   color: var(--color-text-muted);
+}
+
+/* ===== 26.b NOT FOUND (Detail Page) ===== */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding: var(--space-2xl) var(--space-sm);
+  text-align: center;
+}
+
+.not-found__text {
+  max-width: 48ch;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .not-found {
+    padding-block: var(--space-3xl);
+  }
 }
 
 /* ===== 27. DETAIL HERO (Destination & Package) ===== */
