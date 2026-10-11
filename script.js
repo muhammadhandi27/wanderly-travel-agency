@@ -15,6 +15,7 @@ const destinationsData = [
       "images/destination/bali-3.jpg",
       "images/destination/bali-4.jpg"
     ],
+    relatedPackageId: "bali-03",
     shortDesc: "Beaches, food, culture, and activity options easily tailored to various travel styles.",
     about: [
       `Bali offers a combination rarely found in a single place: beaches, rice fields, a vibrant living culture, and a diverse range of food options. Most areas are easily accessible, so you don't have to spend too much time traveling on the road.`,
@@ -32,6 +33,7 @@ const destinationsData = [
     cardImage: "images/destination/kyoto.jpg",
     heroImage: "images/destination/kyoto.jpg",
     gallery: [],
+    relatedPackageId: "japan-01",
     shortDesc: "A city with historic temples, quiet side streets, and culture that is still felt in everyday life.",
     about: [
       `Kyoto was once the capital of Japan, and that history is still visible in its temples, shrines, and traditional wooden houses. Unlike Tokyo, the pace here is slower, with many areas still following rhythms shaped by the changing seasons.`,
@@ -49,6 +51,7 @@ const destinationsData = [
     cardImage: "images/destination/swiss-alps.jpg",
     heroImage: "images/destination/swiss-alps.jpg",
     gallery: [],
+    relatedPackageId: null,
     shortDesc: "Mountains, small villages, and travel routes with scenery that is hard to miss.",
     about: [
       `The Swiss Alps cover a large part of the country, with small villages built into the mountainsides and train lines that connect them with notable reliability. Towns like Interlaken and Zermatt serve as common bases for exploring the surrounding peaks.`,
@@ -66,6 +69,7 @@ const destinationsData = [
     cardImage: "images/destination/raja-ampat.jpg",
     heroImage: "images/destination/raja-ampat.jpg",
     gallery: [],
+    relatedPackageId: "raja-ampat-02",
     shortDesc: "Crystal-clear waters, small islands, and one of the best destinations to enjoy underwater life.",
     about: [
       `Raja Ampat is an archipelago in eastern Indonesia, made up of hundreds of small islands surrounded by clear water. It is widely regarded as one of the richest marine areas in the world, making it a frequent destination for diving and snorkeling.`,
@@ -83,6 +87,7 @@ const destinationsData = [
     cardImage: "images/destination/santorini.jpg",
     heroImage: "images/destination/santorini.jpg",
     gallery: [],
+    relatedPackageId: null,
     shortDesc: "White architecture, the Aegean Sea, and an island atmosphere best enjoyed without rushing.",
     about: [
       `Santorini is shaped by its volcanic history, with white buildings set along the edge of a caldera overlooking the Aegean Sea. Towns like Oia and Fira are known for this architecture, along with narrow streets that are best explored slowly.`,
@@ -100,6 +105,7 @@ const destinationsData = [
     cardImage: "images/destination/new-zealand.jpg",
     heroImage: "images/destination/new-zealand.jpg",
     gallery: [],
+    relatedPackageId: null,
     shortDesc: "Expansive landscapes, lakes, mountains, and road trips — perfect for those who want to explore extensively.",
     about: [
       `New Zealand is made up of two main islands, each with a different character. The North Island has a milder climate and more geothermal activity, while the South Island is known for mountains, lakes, and glaciers.`,
@@ -200,7 +206,7 @@ const tourPackagesData = [
       { day: "Day 1", title: "Arrival", desc: "Arrive in Bali, transfer to the hotel, and rest for the remainder of the day." },
       { day: "Day 2", title: "Beach Day", desc: "Free day around Seminyak or Uluwatu, with time for the baech and nearby cafes." },
       { day: "Day 3", title: "Ubud & Rice Terraces", desc: "Visit the Tegallalang rice teraaces, followed by lunch at a local restaurant." },
-      { day: "Day 4", title: "Free Day", desc: "Open day, with an optional spa or massage session avaible on request." },
+      { day: "Day 4", title: "Free Day", desc: "Open day, with an optional spa or massage session available on request." },
       { day: "Day 5", title: "Departure", desc: "Transfer to the airport for the return flight." }
     ],
     included: [
@@ -812,9 +818,23 @@ function initDestinationDetailPage() {
     }
   }
 
-  // Related Packages (Title Only)
-  const relatedHeading = document.querySelector(".related-package .section-heading__title");
-  if (relatedHeading) relatedHeading.textContent = `Available Tours for ${destination.name}`;
+  // Related Packages
+  const relatedSection = document.querySelector(".related-package");
+  if (relatedSection) {
+    const relatedPkg = tourPackagesData.find((item) => item.id === destination.relatedPackageId);
+    const headingEl = relatedSection.querySelector(".section-heading__title");
+    const grid = relatedSection.querySelector(".tour-package-grid");
+
+    if (relatedPkg) {
+      if (headingEl) headingEl.textContent = `Available Tours for ${destination.name}`;
+      if (grid) grid.innerHTML = buildTourPackageCardHTML(relatedPkg);
+    } else {
+      if (headingEl) headingEl.textContent = `No Tours Yet for ${destination.name}`;
+      if (grid) {
+        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package for ${destination.name} yet. <a href="contact.html">Contact us</a> and we can help put together a plan.</p>`
+      }
+    }
+  }
 
   // CTA Banner
   const promoTitle = document.querySelector(".promo-banner__title");
@@ -1073,7 +1093,7 @@ function initExperienceDetailPage() {
       if (headingEl) headingEl.textContent = "No Packages Yet for This Experience";
       if (eyebrowEl) eyebrowEl.textContent = `${experience.category}`;
       if (grid) {
-        grid.innerHTML = `<p class="experience-detail__no-package">We don't have a tour package built specifically for this experience yet. <a href="contact.html">Contact Us</a> and we can help put together a plan.</p>`;
+        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package built specifically for this experience yet. <a href="contact.html">Contact Us</a> and we can help put together a plan.</p>`;
       }
     }
   }

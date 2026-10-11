@@ -2263,6 +2263,19 @@ button i {
   color: var(--color-text-muted);
 }
 
+.tour-package-grid__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-xl) var(--space-sm);
+  color: var(--color-text-muted);
+}
+
+.tour-package-grid__empty a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* ===== 26.b NOT FOUND (Detail Page) ===== */
 .not-found {
   display: flex;
