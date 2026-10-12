@@ -1249,9 +1249,32 @@ const bookingValidators = {
   }
 };
 
+function prefillBookingTrip(form) {
+  const tripInput = form.querySelector("#booking-trip");
+  if (!tripInput) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const packageId = params.get("package");
+  const destinationId = params.get("destination");
+
+  let tripName = "";
+
+  if (packageId) {
+    const pkg = tourPackagesData.find((item) => item.id === packageId);
+    if (pkg) tripName = pkg.title;
+  } else if (destinationId) {
+    const destination = destinationsData.find((item) => item.id ===destinationId);
+    if (destination) tripName = destination.name;
+  }
+
+  if (tripName) tripInput.value = tripName;
+}
+
 function initBookingForm() {
   const form = document.querySelector("#booking-form");
   if (!form) return;
+
+  prefillBookingTrip(form);
 
   const errorSummary = document.querySelector("#booking-form-error");
 
