@@ -1204,6 +1204,98 @@ function renderListingCards() {
   }
 }
 
+// ====== 4.6. BOOKING FORM =====
+function getTodayISO() {
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${now.getFullYear()}-${month}-${day}`;
+}
+
+const bookingValidators = {
+  "booking-name": (input) => {
+    const value = input.value.trim();
+    if (!value) return "Please enter your full name.";
+    if (value.length < 2) return "Your name must be at least 2 characters.";
+    return "";
+  },
+  "booking-email": (input) => {
+    if (!input.value.trim()) return "Please enter your email address.";
+    if (input.validity.typeMismatch) return "Please enter a valid email address.";
+    return "";
+  },
+  "booking-phone": (input) => {
+    const value = input.value.trim();
+    if (!value) return "Please enter your phone number.";
+    if (!/^\+\d{8,15}$/.test(value.replace(/[\s-]/g, ""))) {
+      return "Use international format, e.g. +62 812 3456 7890";
+    }
+    return "";
+  },
+  "booking-trip": (input) => {
+    if (!input.value.trim()) return "Please tell us which trip you are booking.";
+    return "";
+  },
+  "booking-date": (input) => {
+    if (input.validity.valueMissing || input.validity.badInput) return "Please choose your travel date.";
+    if (input.validity.rangeUnderflow) return "Your travel date can't be in the past.";
+    return "";
+  },
+  "booking-travelers": (input) => {
+    if (input.validity.valueMissing || input.validity.badInput) return "Please enter the number of travelers.";
+    if (input.validity.rangeUnderflow) return "At least 1 traveler is required.";
+    if (input.validity.stepMismatch) return "Please enter a whole number.";
+    return "";
+  }
+};
+
+function initBookingForm() {
+  const form = document.querySelector("#booking-form");
+  if (!form) return;
+
+  const errorSummary = document.querySelector("#booking-form-error");
+
+  const dateInput = form.querySelector("#booking-date");
+  if (dateInput) dateInput.min = getTodayISO();
+
+  const fields = Array.from(form.querySelectorAll("input, textarea"))
+    .filter((field) => bookingValidators[field.id]);
+
+  function validateField(field) {
+    const message = bookingValidators[field.id](field);
+    const errorEl = document.querySelector(`#${field.id}-error`);
+    if (errorEl) errorEl.textContent = message;
+    field.setAttribute("aria-invalid", message ? "true" : "false");
+    return !message;
+  }
+
+  // Validate when user left a field
+  form.addEventListener("focusout", (event) => {
+    if (bookingValidators[event.target.id]) validateField(event.target);
+  });
+
+  // Auto correct when user is typing
+  form.addEventListener("input", (event) => {
+    if (event.target.getAttribute("aria-invalid") === "true") validateField(event.target); 
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const invalidFields = fields.filter((field) => !validateField(field));
+
+    if (errorSummary) errorSummary.hidden = invalidFields.length === 0;
+
+    if (invalidFields.length > 0) {
+      invalidFields[0].focus();
+      return;
+    }
+
+    // TEMPORARY: this line will be removed when the data is valid
+    console.log("Booking valid:", Object.fromEntries(new FormData(form)));
+  });
+}
+
 // Inisialisasi - Jalankan semua fungsi setelah HTML siap
 document.addEventListener("DOMContentLoaded", () => {
   renderListingCards();
@@ -1215,4 +1307,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initPackageDetailPage();
   initBlogDetailPage();
   initExperienceDetailPage();
+  initBookingForm();
 });

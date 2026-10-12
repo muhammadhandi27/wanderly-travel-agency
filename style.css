@@ -774,8 +774,8 @@ button i {
 }
 
 /* Border pada Input yang Errornya Terisi */
-.form-field:has(.form-field__error:not(:empty)) input,
-.form-field:has(.form-field__error:not(:empty)) textarea {
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
   border-color: var(--color-error);
 }
 

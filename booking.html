@@ -64,45 +64,45 @@
 
       <form class="booking-form" id="booking-form" novalidate>
 
-        <p class="booking-form__error-summary" id="booking-form-error" role="alert" hidden>
+        <p class="booking-form__error-summary" id="booking-form-error" hidden>
           Please check the highlighted fields and try again.
         </p>
 
         <div class="form-field">
           <label for="booking-name">Full Name</label>
-          <input type="text" id="booking-name" name="full-name" required>
-          <p class="form-field__error" id="booking-name-error" role="alert"></p>
+          <input type="text" id="booking-name" name="full-name" required aria-describedby="booking-name-error">
+          <p class="form-field__error" id="booking-name-error"></p>
         </div>
 
         <div class="form-field">
           <label for="booking-email">Email Address</label>
-          <input type="email" id="booking-email" name="email" required>
-          <p class="form-field__error" id="booking-email-error" role="alert"></p>
+          <input type="email" id="booking-email" name="email" required aria-describedby="booking-email-error">
+          <p class="form-field__error" id="booking-email-error"></p>
         </div>
 
         <div class="form-field">
           <label for="booking-phone">Phone Number</label>
-          <input type="tel" id="booking-phone" name="phone" required>
-          <p class="form-field__helper">Include country code, e.g. +62</p>
-          <p class="form-field__error" id="booking-phone-error" role="alert"></p>
+          <input type="tel" id="booking-phone" name="phone" required aria-describedby="booking-phone-helper booking-phone-error">
+          <p class="form-field__helper" id="booking-phone-helper">Include country code, e.g. +62</p>
+          <p class="form-field__error" id="booking-phone-error"></p>
         </div>
 
         <div class="form-field">
           <label for="booking-trip">Trip / Destination</label>
-          <input type="text" id="booking-trip" name="trip" placeholder="Which trip are you booking?" required>
-          <p class="form-field__error" id="booking-trip-error" role="alert"></p>
+          <input type="text" id="booking-trip" name="trip" placeholder="Which trip are you booking?" required aria-describedby="booking-trip-error">
+          <p class="form-field__error" id="booking-trip-error"></p>
         </div>
 
         <div class="form-field">
           <label for="booking-date">Travel Date</label>
-          <input type="date" id="booking-date" name="travel-date" required>
-          <p class="form-field__error" id="booking-date-error" role="alert"></p>
+          <input type="date" id="booking-date" name="travel-date" required aria-describedby="booking-date-error">
+          <p class="form-field__error" id="booking-date-error"></p>
         </div>
 
         <div class="form-field">
           <label for="booking-travelers">Number of Travelers</label>
-          <input type="number" id="booking-travelers" name="travelers" min="1" value="1" required>
-          <p class="form-field__error" id="booking-travelers-error" role="alert"></p>
+          <input type="number" id="booking-travelers" name="travelers" min="1" value="1" required aria-describedby="booking-travelers-error">
+          <p class="form-field__error" id="booking-travelers-error"></p>
         </div>
 
         <div class="form-field">
@@ -129,7 +129,7 @@
       <p class="booking-help__desc">
         If you need assistance before completing your booking or have questions about the payment process, our team is ready to help.
       </p>
-      <a href="contact.html" class="button button--outline">Contact Support</a>
+      <a href="contact.html" class="button button--ghost">Contact Support</a>
     </section>
 
     <!-- ============ BOOKING HISTORY ============ -->
