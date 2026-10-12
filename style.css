@@ -2638,17 +2638,41 @@ button i {
   margin-top: var(--space-sm);
 }
 
-.booking-success {
-  text-align: center;
-  background-color: rgba(79, 138, 103, 0.1);
-  border: 1px solid rgba(79, 138, 103, 0.3);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
+.booking-modal {
+  width: 90%;
+  max-width: 420px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  margin: auto;
 }
 
-.booking-success h2 {
+.booking-modal::backdrop {
+  background-color: rgba(11, 31, 38, 0.6);
+}
+
+.booking-modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.booking-modal__title {
   color: var(--color-success);
-  margin-bottom: var(--space-xs);
+}
+
+.booking-modal__text {
+  color: var(--color-text-muted);
+}
+
+/* Lock page scroll when modal is open */
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 .booking-history {

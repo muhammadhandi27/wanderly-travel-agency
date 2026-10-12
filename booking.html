@@ -113,13 +113,17 @@
         <button type="submit" class="button button--primary booking-form__submit">Confirm Booking</button>
       </form>
 
-      <div class="booking-success" id="booking-success" role="status" aria-live="polite" hidden>
-        <h2>Booking Received</h2>
-        <p>
-          Your trip request has been saved. We will follow up with
-          the next steps shortly.
-        </p>
-      </div>
+      <dialog class="booking-modal" id="booking-modal" aria-labelledby="booking-modal-title" aria-describedby="booking-modal-text">
+        <div class="booking-modal__content">
+          <h2 class="booking-modal__title" id="booking-modal-title">Booking Received</h2>
+          <p class="booking-modal__text" id="booking-modal-text">
+            Your trip request has been saved. We will follow up with the next steps shortly.
+          </p>
+          <form action="" method="dialog">
+            <button type="submit" class="button button--primary">Close</button>
+          </form>
+        </div>
+      </dialog>
 
     </section>
 

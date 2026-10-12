@@ -1270,6 +1270,27 @@ function prefillBookingTrip(form) {
   if (tripName) tripInput.value = tripName;
 }
 
+const BOOKINGS_KEY = "wanderlyBookings";
+
+function loadBookings() {
+  try {
+    const stored = localStorage.getItem(BOOKINGS_KEY);
+    const parsed = stored? JSON.parse(stored) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveBookings(bookings) {
+  try {
+    localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function initBookingForm() {
   const form = document.querySelector("#booking-form");
   if (!form) return;
@@ -1277,6 +1298,8 @@ function initBookingForm() {
   prefillBookingTrip(form);
 
   const errorSummary = document.querySelector("#booking-form-error");
+  const summaryDefaultText = errorSummary ? errorSummary.textContent.trim() : "";
+  const successModal = document.querySelector("#booking-modal");
 
   const dateInput = form.querySelector("#booking-date");
   if (dateInput) dateInput.min = getTodayISO();
@@ -1307,16 +1330,50 @@ function initBookingForm() {
 
     const invalidFields = fields.filter((field) => !validateField(field));
 
-    if (errorSummary) errorSummary.hidden = invalidFields.length === 0;
+    if (errorSummary) {
+      errorSummary.textContent = summaryDefaultText;
+      errorSummary.hidden = invalidFields.length === 0;
+    }
 
     if (invalidFields.length > 0) {
       invalidFields[0].focus();
       return;
     }
 
-    // TEMPORARY: this line will be removed when the data is valid
-    console.log("Booking valid:", Object.fromEntries(new FormData(form)));
+    const formData = new FormData(form);
+    const booking = {
+      id: `booking-${Date.now()}`,
+      fullName: formData.get("full-name").trim(),
+      email: formData.get("email").trim(),
+      phone: formData.get("phone").trim(),
+      trip: formData.get("trip").trim(),
+      travelDate: formData.get("travel-date"),
+      travelers: Number(formData.get("travelers")),
+      message: formData.get("message").trim(),
+      createdAt: new Date().toISOString()
+    };
+
+    const bookings = loadBookings();
+    bookings.unshift(booking);
+
+    if (!saveBookings(bookings)) {
+      if (errorSummary) {
+        errorSummary.textContent = "We couldn't save your booking in this browser. Please try again.";
+        errorSummary.hidden = false;
+      }
+      return;
+    }
+
+    form.reset();
+    if (successModal) successModal.showModal();
   });
+
+  // Close modal when backdrop is clicked
+  if (successModal) {
+    successModal.addEventListener("click", (event) => {
+      if (event.target === successModal) successModal.close();
+    });
+  }
 }
 
 // Inisialisasi - Jalankan semua fungsi setelah HTML siap
