@@ -1271,10 +1271,11 @@ function prefillBookingTrip(form) {
 }
 
 const BOOKINGS_KEY = "wanderlyBookings";
+const WISHLIST_KEY = "wanderlyWishlist";
 
-function loadBookings() {
+function readStoredList(key) {
   try {
-    const stored = localStorage.getItem(BOOKINGS_KEY);
+    const stored = localStorage.getItem(key);
     const parsed = stored? JSON.parse(stored) : [];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
@@ -1282,14 +1283,20 @@ function loadBookings() {
   }
 }
 
-function saveBookings(bookings) {
+function writeStoredList(key, list) {
   try {
-    localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
+    localStorage.setItem(key, JSON.stringify(list));
     return true;
   } catch {
     return false;
   }
 }
+
+function loadBookings() { return readStoredList(BOOKINGS_KEY); }
+function saveBookings(bookings) { return writeStoredList(BOOKINGS_KEY, bookings); }
+
+function loadWishlist() { return readStoredList(WISHLIST_KEY); }
+function saveWishlist(items) { return writeStoredList(WISHLIST_KEY, items); }
 
 function formatDisplayDate(date) {
   return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -1442,7 +1449,68 @@ function initBookingForm() {
   }
 }
 
-// Inisialisasi - Jalankan semua fungsi setelah HTML siap
+// ====== 4.7. WISHLIST =====
+function getWishlistItemFromButton(button) {
+  if (button.dataset.destinationId) {
+    return { type: "destination", id: button.dataset.destinationId };
+  }
+  if (button.dataset.packageId) {
+    return { type: "package", id: button.dataset.packageId };
+  }
+  return null;
+}
+
+function isInWishlist(items, target) {
+  return items.some((item) => item.type === target.type && item.id === target.id);
+}
+
+function initSaveTripButton() {
+  const button = document.querySelector(".info-card__save");
+  if (!button) return;
+
+  const target = getWishlistItemFromButton(button);
+  if (!target) return;
+
+  button.setAttribute("aria-pressed", String(isInWishlist(loadWishlist(), target)));
+
+  button.addEventListener("click", () => {
+    const items = loadWishlist();
+
+    const updated = isInWishlist(items, target)
+    ? items.filter((item) => !(item.type === target.type && item.id === target.id))
+    : [target, ...items];
+
+    if (saveWishlist(updated)) {
+      button.setAttribute("aria-pressed", String(isInWishlist(updated, target)));
+    }
+  });
+}
+
+function renderWishlistPage() {
+  const grid = document.querySelector("#wishlist-grid");
+  const emptyMessage = document.querySelector("#wishlist-empty");
+  if (!grid || !emptyMessage) return;
+
+  const cardsHTML = loadWishlist().map((item) => {
+    if (item.type === "destination") {
+      const destination = destinationsData.find((entry) => entry.id === item.id);
+      return destination ? buildDestinationCardHTML(destination) : "";
+    }
+    if (item.type === "package") {
+      const pkg = tourPackagesData.find((entry) => entry.id === item.id);
+      return pkg ? buildTourPackageCardHTML(pkg) : ""; 
+    }
+    return "";
+  })
+  .join("");
+
+  const hasCards = cardsHTML !== "";
+  grid.innerHTML = cardsHTML;
+  grid.hidden = !hasCards;
+  emptyMessage.hidden = hasCards;
+}
+
+// Initialization - Running all function after HTML is ready
 document.addEventListener("DOMContentLoaded", () => {
   renderListingCards();
   initNavbarToggle();
@@ -1455,4 +1523,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initExperienceDetailPage();
   initBookingForm();
   initBookingHistory();
+  initSaveTripButton();
+  renderWishlistPage();
 });

@@ -2917,7 +2917,54 @@ body:has(dialog[open]) {
   margin-bottom: var(--space-md);
 }
 
-/* ===== 38. POLISH — Large Desktop Refinement ===== */
+/* ===== 38. WISHLIST PAGE ===== */
+.wishlist__noscript-notice {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding: var(--space-md) var(--space-sm);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.wishlist {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding: 0 var(--space-sm) var(--space-xl);
+}
+
+.wishlist__empty {
+  padding: var(--space-2xl) var(--space-sm);
+  text-align: center;
+}
+
+.wishlist__empty p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.wishlist-grid[hidden] {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== 39. POLISH — Large Desktop Refinement ===== */
 @media (min-width: 1440px) {
   .destination-grid,
   .tour-package-grid,
@@ -2944,7 +2991,7 @@ body:has(dialog[open]) {
   }
 }
 
-/* ===== 39. POLISH — Orphan Control pada Heading ===== */
+/* ===== 40. POLISH — Orphan Control pada Heading ===== */
 h1,
 h2,
 .hero__headline,
@@ -2953,7 +3000,7 @@ h2,
   text-wrap: balance;
 }
 
-/* ===== 40. POLISH — Touch Target Minimum (Mobile) ===== */
+/* ===== 41. POLISH — Touch Target Minimum (Mobile) ===== */
 .filter-bar__chip {
   min-height: 40px;
   display: inline-flex;
