@@ -1291,6 +1291,71 @@ function saveBookings(bookings) {
   }
 }
 
+function formatDisplayDate(date) {
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function createBookingHistoryItem(booking) {
+  const item = document.createElement("li");
+  item.className = "booking-history__item";
+  item.dataset.bookingId = booking.id;
+
+  const trip = document.createElement("h3");
+  trip.className = "booking-history__trip";
+  trip.textContent = booking.trip;
+
+  const travelDate = formatDisplayDate(new Date(`${booking.travelDate}T00:00:00`));
+  const travelerLabel = booking.travelers === 1 ? "traveler" : "travelers";
+
+  const details = document.createElement("p");
+  details.className = "booking-history__details";
+  details.textContent = `Travel date: ${travelDate} · ${booking.travelers} ${travelerLabel}`;
+
+  const meta = document.createElement("p");
+  meta.className = "booking-history__meta";
+  meta.textContent = `Requested on ${formatDisplayDate(new Date(booking.createdAt))}`;
+
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.className = "button button--secondary booking-history__remove";
+  removeButton.textContent = "Remove";
+  removeButton.setAttribute("aria-label", `Remove booking for ${booking.trip}`);
+
+  item.append(trip, details, meta, removeButton);
+  return item;
+}
+
+function renderBookingHistory() {
+  const list = document.querySelector("#booking-history-list");
+  const emptyMessage = document.querySelector("#booking-history-empty");
+  if (!list || !emptyMessage);
+
+  const bookings = loadBookings();
+
+  list.replaceChildren(...bookings.map(createBookingHistoryItem));
+  emptyMessage.hidden = bookings.length > 0;
+}
+
+function initBookingHistory() {
+  const list = document.querySelector("#booking-history-list");
+  if (!list) return;
+
+  renderBookingHistory();
+
+  list.addEventListener("click", (event) => {
+    const removeButton = event.target.closest(".booking-history__remove");
+    if (!removeButton) return;
+
+    const bookingId = removeButton.closest("li").dataset.bookingId;
+
+    if (!window.confirm("Remove this booking from your history?")) return;
+
+    const remaining = loadBookings().filter((booking) => booking.id !== bookingId);
+    saveBookings(remaining);
+    renderBookingHistory();
+  });
+}
+
 function initBookingForm() {
   const form = document.querySelector("#booking-form");
   if (!form) return;
@@ -1364,6 +1429,7 @@ function initBookingForm() {
       return;
     }
 
+    renderBookingHistory();
     form.reset();
     if (successModal) successModal.showModal();
   });
@@ -1388,4 +1454,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initBlogDetailPage();
   initExperienceDetailPage();
   initBookingForm();
+  initBookingHistory();
 });
