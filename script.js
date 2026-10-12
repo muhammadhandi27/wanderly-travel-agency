@@ -1449,6 +1449,45 @@ function initBookingForm() {
   }
 }
 
+// ===== HELPER - GENERIC FORM VALIDATION =====
+function initFormValidation(form, validators, onValid) {
+  const errorSummary = document.querySelector(`#${form.id}-error`);
+
+  const fields = Array.from(form.querySelectorAll("input", "textarea"))
+    .filter((field) => validators[field.id]);
+
+  function validateField(field) {
+    const message = validators[field.id](field);
+    const errorEl = document.querySelector(`#${field.id}-error`);
+    if (errorEl) errorEl.textContent = message;
+    field.setAttribute("aria-invalid", message ? "true" : "false");
+    return !message;
+  }
+
+  form.addEventListener("focusout", (event) => {
+    if (validators[event.target.id]) validateField(event.target);
+  });
+
+  form.addEventListener("input", (event) => {
+    if (event.target.getAttribute("aria-invalid") === "true") validateField(event.target);
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const invalidFields = fields.filter((field) => !validateField(field));
+
+    if (errorSummary) errorSummary.hidden = invalidFields.length === 0;
+
+    if (invalidFields.length > 0) {
+      invalidFields[0].focus();
+      return;
+    }
+
+    onValid(form);
+  });
+}
+
 // ====== 4.7. WISHLIST =====
 function getWishlistItemFromButton(button) {
   if (button.dataset.destinationId) {
@@ -1510,6 +1549,48 @@ function renderWishlistPage() {
   emptyMessage.hidden = hasCards;
 }
 
+// ===== 4.8.a. CONTACT FORM =====
+const contactValidators = {
+  "contact-name": (input) => {
+    const value = input.value.trim();
+    if (!value) return "Please enter your name.";
+    if (value.length < 2) return "Your name must be at least 2 characters.";
+    return "";
+  },
+  "contact-email": (input) => {
+    if (!input.value.trim()) return "Please enter your email address.";
+    if (input.validity.typeMismatch) return "Please enter a valid email address.";
+    return "";
+  }, 
+  "contact-date": (input) => {
+    if (input.validity.rangeUnderflow) return "Your travel date can't be in the past.";
+    return "";
+  },
+  "contact-message": (input) => {
+    if (!input.value.trim()) return "Please tell us a little about your trip.";
+    return "";
+  }
+};
+
+function initContactForm() {
+  const form = document.querySelector("#contact-form");
+  if (!form) return;
+
+  const dateInput = form.querySelector("#contact-date");
+  if (dateInput) dateInput.min = getTodayISO();
+
+  initFormValidation(form, contactValidators, () => {
+    const success = document.querySelector("#contact-success");
+    const successTitle = document.querySelector("#contact-success-title");
+
+    form.reset();
+    form.hidden = true;
+
+    if (success) success.hidden = false;
+    if (successTitle) successTitle.focus();
+  });
+}
+
 // Initialization - Running all function after HTML is ready
 document.addEventListener("DOMContentLoaded", () => {
   renderListingCards();
@@ -1525,4 +1606,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initBookingHistory();
   initSaveTripButton();
   renderWishlistPage();
+  initContactForm();
 });

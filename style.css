@@ -2817,6 +2817,22 @@ body:has(dialog[open]) {
   padding: 0 0 var(--space-md);
 }
 
+.contact-success {
+  padding: var(--space-lg) var(--space-md);
+  background-color: rgba(79, 138, 103, 0.1);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.contact-success h2 {
+  margin-bottom: var(--space-xs);
+  color: var(--color-success);
+}
+
+.contact-success p {
+  color: var(--color-text-muted);
+}
+
 @media (min-width: 1024px) {
   .contact-layout {
     flex-direction: row;
