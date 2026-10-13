@@ -707,8 +707,8 @@ function initFilterToolbar() {
     if (!term) return true;
 
     const titleEl = card.querySelector('[class*="__title"]');
-    const title = titleEl ? titleEl.textContent.toLowerCase() : "";
-    return title.includes(term);
+    const haystack = card.dataset.search || (titleEl ? titleEl.textContent : "");
+    return haystack.toLowerCase().includes(term);
   }
 
   function applyFilters() {
@@ -723,20 +723,64 @@ function initFilterToolbar() {
     if (emptyState) emptyState.hidden = visibleCount > 0;
   }
 
+  function setActiveChip(chip) {
+    chips.forEach((c) => c.classList.remove("filter-bar__chip--active"));
+    chip.classList.add("filter-bar__chip--active");
+    activeFilter = chip.dataset.filter;
+    applyFilters();
+  }
+
   chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      chips.forEach((c) => c.classList.remove("filter-bar__chip--active"));
-      chip.classList.add("filter-bar__chip--active");
-      activeFilter = chip.dataset.filter;
-      applyFilters();
-    });
+    chip.addEventListener("click", () => setActiveChip(chip));
   });
 
   if (searchInput) {
     searchInput.addEventListener("input", applyFilters);
   }
 
-  applyFilters();
+  // Read ?q and ?category from URL
+  const params = new URLSearchParams(window.location.search);
+
+  const queryParam = params.get("q");
+  if (searchInput && queryParam) searchInput.value = queryParam.trim();
+
+  const categoryParam = params.get("category");
+  const initialChip = chips.find((chip) => chip.dataset.filter === categoryParam);
+
+  if (initialChip) {
+    setActiveChip(initialChip);
+  } else if (categoryParam) {
+    activeFilter = categoryParam;
+    chips.forEach((chip) => chip.classList.remove("filter-bar__chip--active"));
+    applyFilters();
+  } else {
+    applyFilters();
+  }
+}
+
+// ===== 4.9. HERO SEARCH WIDGET =====
+function initHeroSearch() {
+  const form = document.querySelector(".search-widget");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const destination = form.querySelector("#search-destination").value.trim();
+    const tourType = form.querySelector("#search-tour-type").value;
+
+    const params = new URLSearchParams();
+    if (destination) params.set("q", destination);
+
+    let page = "destination.html";
+    if (tourType) {
+      page = "tourpackage.html";
+      params.set("category", tourType);
+    }
+
+    const query = params.toString();
+    window.location.href = query ? `${page}?${query}` : page;
+  });
 }
 
 // ===== 4.5.a. RENDER DESTINATION DETAIL PAGE =====
@@ -847,7 +891,7 @@ function initDestinationDetailPage() {
 // ===== HELPER - Build HTML Tour Package Card =====
 function buildTourPackageCardHTML(pkg) {
   return `
-    <article class="tour-package-card" data-category="${pkg.categoryKey}">
+    <article class="tour-package-card" data-category="${pkg.categoryKey}" data-search="${pkg.title} ${pkg.location}">
       <div class="tour-package-card__media">
         <img src="${pkg.cardImage}" alt="${pkg.title}" class="tour-package-card__image">
         <span class="tour-package-card__category">${pkg.category}</span>
@@ -1128,7 +1172,7 @@ function renderNotFound(page, { title, message, backHref, backLabel }) {
 // ===== HELPER - Build HTML DESTINATION CARD =====
 function buildDestinationCardHTML(dest) {
   return `
-    <article class="destination-card" data-region="${dest.region}">
+    <article class="destination-card" data-region="${dest.region}" data-search="${dest.name} ${dest.country}">
       <div class="destination-card__media">
         <img src="${dest.cardImage}" alt="${dest.name}, ${dest.country}" class="destination-card__image">
         <span class="destination-card__badge">${dest.tourCount}</span> 
@@ -1634,4 +1678,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderWishlistPage();
   initContactForm();
   initNewsletterForm();
+  initHeroSearch();
 });

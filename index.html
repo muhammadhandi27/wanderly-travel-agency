@@ -75,7 +75,7 @@
       </div>
 
       <!-- ===== TRAVEL SEARCH WIDGET ===== -->
-      <form action="" class="search-widget" role="search" aria-label="Trip search">
+      <form action="destination.html" class="search-widget" role="search" aria-label="Trip search">
         <h2 class="search-widget__title">Where Are You Going?</h2>
 
         <div class="search-widget__fields">
@@ -84,7 +84,7 @@
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               Destination
             </label>
-            <input type="text" name="destination" id="search-destination" placeholder="Search a destination">
+            <input type="text" name="q" id="search-destination" placeholder="Search a destination">
           </div>
 
           <div class="search-widget__field">
@@ -92,7 +92,7 @@
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
               Travel Date
             </label>
-            <input type="date" name="travel-date" id="search-date" placeholder="Choose your date">
+            <input type="date" name="travel-date" id="search-date">
           </div>
 
           <div class="search-widget__field">
@@ -102,9 +102,9 @@
             </label>
             <select name="travelers" id="search-travelers">
               <option value="1">1 Traveler</option>
-              <option value="2" selected>2 Traveler</option>
-              <option value="3">3 Traveler</option>
-              <option value="4">4 Traveler</option>
+              <option value="2" selected>2 Travelers</option>
+              <option value="3">3 Travelers</option>
+              <option value="4">4 Travelers</option>
             </select>
           </div>
           
@@ -117,7 +117,7 @@
               <option value="">Choose a type</option>
               <option value="adventure">Adventure</option>
               <option value="beach">Beach Escape</option>
-              <option value="culture">Cultural Journey</option>
+              <option value="cultural">Cultural Journey</option>
               <option value="family">Family Vacation</option>
               <option value="honeymoon">Honeymoon</option>
               <option value="luxury">Luxury Travel</option>
@@ -129,8 +129,6 @@
             Search Trips
           </button>
         </div>
-
-        
       </form>
     </section>
 
