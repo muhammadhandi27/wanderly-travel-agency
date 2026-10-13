@@ -138,11 +138,16 @@
         Get destination guides, travel tips, and selected recommendations delivered straight to your email.
       </p>
 
-      <form action="" class="newsletter__form">
+      <form action="" class="newsletter__form" id="newsletter-form">
         <label for="newsletter-email" class="visually-hidden">Email address</label>
-        <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required>
+        <input type="email" name="email" id="newsletter-email" placeholder="Your email address" required aria-describedby="newsletter-email-error">
         <button type="submit" class="button button--primary">Subscribe</button>
       </form>
+
+      <p class="newsletter__error" id="newsletter-email-error"></p>
+      <p class="newsletter__success" id="newsletter-success" tabindex="-1" hidden>
+        Thanks for subscribing. We'll be in touch with travel notes once in a while.
+      </p>
 
       <p class="newsletter__disclaimer">No spam. Just useful travel content.</p>
     </section>

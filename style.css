@@ -66,6 +66,7 @@ select {
   --color-success: #4F8A67;
   --color-warning: #C58A3A;
   --color-error: #C95C5C;
+  --color-error-light: #F0A8A8;
   --color-info: #557A91;
 
   --color-white: #FFFFFF;
@@ -2091,6 +2092,31 @@ button i {
 .newsletter__disclaimer {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter__form[hidden] {
+  display: none;
+}
+
+.newsletter__form input[aria-invalid="true"] {
+  box-shadow: 0 0 0 2px var(--color-error-light);
+}
+
+.newsletter__error {
+  margin-bottom: var(--space-xs);
+  font-size: 13px;
+  color: var(--color-error-light);
+}
+
+.newsletter__error:empty {
+  display: none;
+}
+
+.newsletter__success {
+  max-width: 440px;
+  margin: 0 auto;
+  color: var(--color-white);
+  font-weight: 600;
 }
 
 @media (min-width: 640px) {

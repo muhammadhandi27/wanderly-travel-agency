@@ -1550,6 +1550,12 @@ function renderWishlistPage() {
 }
 
 // ===== 4.8.a. CONTACT FORM =====
+function validateEmailField(input) {
+  if (!input.value.trim()) return "Please enter your email address.";
+  if (input.validity.typeMismatch) return "Please enter a valid email address.";
+  return "";
+}
+
 const contactValidators = {
   "contact-name": (input) => {
     const value = input.value.trim();
@@ -1557,11 +1563,7 @@ const contactValidators = {
     if (value.length < 2) return "Your name must be at least 2 characters.";
     return "";
   },
-  "contact-email": (input) => {
-    if (!input.value.trim()) return "Please enter your email address.";
-    if (input.validity.typeMismatch) return "Please enter a valid email address.";
-    return "";
-  }, 
+  "contact-email": validateEmailField, 
   "contact-date": (input) => {
     if (input.validity.rangeUnderflow) return "Your travel date can't be in the past.";
     return "";
@@ -1591,6 +1593,30 @@ function initContactForm() {
   });
 }
 
+// ===== 4.8.b. NEWSLETTER FORM =====
+const newsletterValidators = {
+  "newsletter-email": validateEmailField
+};
+
+function initNewsletterForm() {
+  const form = document.querySelector("#newsletter-form");
+  if (!form) return;
+
+  form.noValidate = true;
+
+  initFormValidation(form, newsletterValidators, () => {
+    const success = document.querySelector("#newsletter-success");
+
+    form.reset();
+    form.hidden = true;
+
+    if (success) {
+      success.hidden = false;
+      success.focus();
+    }
+  });
+}
+
 // Initialization - Running all function after HTML is ready
 document.addEventListener("DOMContentLoaded", () => {
   renderListingCards();
@@ -1607,4 +1633,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initSaveTripButton();
   renderWishlistPage();
   initContactForm();
+  initNewsletterForm();
 });
