@@ -856,7 +856,11 @@ function initDestinationDetailPage() {
       const galleryGrid = gallerySection.querySelector(".destination-gallery__grid");
       if (galleryGrid) {
         galleryGrid.innerHTML = destination.gallery
-          .map((src) => `<img src="${src}" alt="${destination.name} photo">`)
+          .map((src, index) => `
+            <button type="button" class="destination-gallery__item" aria-haspopup="dialog">
+              <img src="${src}" alt="${destination.name} photo ${index + 1}">
+            </button>
+            `)
           .join("");
       }
     }
@@ -886,6 +890,61 @@ function initDestinationDetailPage() {
 
   const promoCta = document.querySelector(".promo-banner .button");
   if (promoCta) promoCta.href = `booking.html?destination=${destination.id}`;
+}
+
+// ===== 4.10. PHOTO GALLERY LIGHTBOX =====
+function initGalleryLightbox() {
+  console.log("initGalleryLightbox berjalan");
+  const lightbox = document.querySelector("#lightbox");
+  const grid = document.querySelector(".destination-gallery__grid");
+  if (!lightbox || !grid) return;
+
+  const image = lightbox.querySelector("#lightbox-image");
+  const caption = lightbox.querySelector("#lightbox-caption");
+  const prevButton = lightbox.querySelector(".lightbox__button--prev");
+  const nextButton = lightbox.querySelector(".lightbox__button--next");
+  const closeButton = lightbox.querySelector(".lightbox__button--close");
+  if (!image || !caption || !prevButton || !nextButton || !closeButton) return;
+
+  const thumbnails = Array.from(grid.querySelectorAll(".destination-gallery__item img"));
+  if (thumbnails.length === 0) return;
+
+  const hasMultiplePhotos = thumbnails.length > 1;
+  prevButton.hidden = !hasMultiplePhotos;
+  nextButton.hidden = !hasMultiplePhotos;
+
+  let currentIndex = 0;
+
+  function showPhoto(index) {
+    currentIndex = (index + thumbnails.length) % thumbnails.length;
+    const thumbnail = thumbnails[currentIndex];
+
+    image.src = thumbnail.src;
+    image.alt = thumbnail.alt;
+    caption.textContent = `Photo ${currentIndex + 1} of ${thumbnails.length}`;
+  }
+
+  grid.addEventListener("click", (event) => {
+    const item = event.target.closest(".destination-gallery__item");
+    if (!item) return;
+
+    showPhoto(Array.from(grid.children).indexOf(item));
+    lightbox.showModal();
+  });
+
+  prevButton.addEventListener("click", () => showPhoto(currentIndex - 1));
+  nextButton.addEventListener("click", () => showPhoto(currentIndex + 1));
+  closeButton.addEventListener("click", () => lightbox.close());
+
+  // Backdrop Closes the LightBox
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+
+  lightbox.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showPhoto(currentIndex -1);
+    if (event.key === "ArrowRight") showPhoto(currentIndex + 1);
+  });
 }
 
 // ===== HELPER - Build HTML Tour Package Card =====
@@ -1679,4 +1738,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initNewsletterForm();
   initHeroSearch();
+  initGalleryLightbox();
 });

@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!-- Style -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -156,6 +159,27 @@
       </p>
       <a href="booking.html?destination=bali" class="button button--primary">Start Planning</a>
     </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <dialog class="lightbox" id="lightbox" aria-label="Photo gallery">
+      <figure class="lightbox__figure">
+        <div class="lightbox__stage">
+          <img alt="" class="lightbox__image" id="lightbox-image">
+
+          <button type="button" class="lightbox__button lightbox__button--close" aria-label="Close gallery">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="lightbox__button lightbox__button--prev" aria-label="Previous photo">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="lightbox__button lightbox__button--next" aria-label="Next photo">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"></figcaption>
+      </figure>
+    </dialog>
   </main>
 
   <footer class="footer">
