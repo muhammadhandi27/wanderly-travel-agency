@@ -1083,6 +1083,55 @@ function initPackageDetailPage() {
 
   const saveBtn = document.querySelector(".info-card__save");
   if (saveBtn) saveBtn.dataset.packageId = pkg.id;
+
+  initCostCalculator(pkg);
+}
+
+// ===== 4.11. COST CALCULATOR =====
+const usdFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0
+});
+
+function parsePrice(priceText) {
+  return Number(priceText.replace(/[^0-9.]/g, ""));
+}
+
+function initCostCalculator(pkg) {
+  const calculator = document.querySelector("#cost-calculator");
+  if (!calculator) return;
+
+  const travelersInput = calculator.querySelector("#calc-travelers");
+  const errorEl = calculator.querySelector("#calc-travelers-error");
+  const breakdownEl = calculator.querySelector("#calc-breakdown");
+  const totalEl = calculator.querySelector("#calc-total");
+  if (!travelersInput || !errorEl || !breakdownEl || !totalEl) return;
+  
+  const pricePerPerson = parsePrice(pkg.price);
+  if (!Number.isFinite(pricePerPerson)) return;
+
+  function updateEstimate() {
+    const travelers = Number(travelersInput.value);
+    const isValid = Number.isInteger(travelers) && travelers >= 1;
+
+    travelersInput.setAttribute("aria-invalid", String(!isValid));
+    errorEl.textContent = isValid ? "" : "Please enter at least 1 traveler.";
+
+    if (!isValid) {
+      breakdownEl.textContent = "";
+      totalEl.textContent = "-";
+      return;
+    }
+
+    const travelerLabel = travelers === 1 ? "traveler" : "travelers";
+    breakdownEl.textContent = `${usdFormatter.format(pricePerPerson)} x ${travelers} ${travelerLabel}`;
+    totalEl.textContent = usdFormatter.format(pricePerPerson * travelers);
+  }
+
+  travelersInput.addEventListener("input", updateEstimate);
+  updateEstimate();
+  calculator.hidden = false;
 }
 
 // ===== 4.5.b. RENDER BLOG DETAIL PAGE =====

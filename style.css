@@ -2476,6 +2476,40 @@ button i {
   background-color: rgba(11, 31, 38, 0.08);
 }
 
+/* ===== 29a.COST CALCULATOR ===== */
+.cost-calculator {
+  margin-top: var(--space-md);
+}
+
+.cost-calculator__title {
+  margin-bottom: var(--space-sm);
+  font-size: 18px;
+}
+
+.cost-calculator__result {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(11, 31, 38, 0.08);
+}
+
+.cost-calculator__breakdown {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.cost-calculator__total {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.cost-calculator__note {
+  margin-top: var(--space-sm);
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
 /* ===== 30. PHOTO GALLERY ===== */
 .destination-gallery {
   max-width: var(--container-width);

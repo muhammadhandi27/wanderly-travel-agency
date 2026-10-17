@@ -167,8 +167,26 @@
             Save Trip
           </button>
         </div>
-      </aside>
 
+        <div class="info-card cost-calculator" id="cost-calculator" hidden>
+          <h2 class="cost-calculator__title">Estimate Your Cost</h2>
+
+          <div class="form-field">
+            <label for="calc-travelers">Number of Travelers</label>
+            <input type="number" id="calc-travelers" min="1" value="1" aria-describedby="calc-travelers-error">
+            <p class="form-field__error" id="calc-travelers-error"></p>
+          </div>
+
+          <div class="cost-calculator__result" role="status">
+            <p class="cost-calculator__breakdown" id="calc-breakdown"></p>
+            <p class="cost-calculator__total" id="calc-total"></p>
+          </div>
+
+          <p class="cost-calculator__note">
+            Based on the starting price per person. Our team will confirm the final details with you.
+          </p>
+        </div>
+      </aside>
     </div>
     
   </main>
