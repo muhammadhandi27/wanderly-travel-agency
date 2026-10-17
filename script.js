@@ -536,6 +536,21 @@ function initNavbarToggle() {
   });
 }
 
+// ===== 4.12. NAVBAR SCROLL EFFECT =====
+function initNavbarScrollEffect() {
+  const header = document.querySelector(".header");
+  if (!header || header.classList.contains("header--solid")) return;
+
+  const SCROLL_THRESHOLD = 40;
+
+  function updateHeader() {
+    header.classList.toggle("header--scrolled", window.scrollY > SCROLL_THRESHOLD);
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+}
+
 // ===== 2. FAQ ACCORDION =====
 function initFaqAccordion() {
   const questions = document.querySelectorAll(".faq-item__question");
@@ -1788,4 +1803,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initNewsletterForm();
   initHeroSearch();
   initGalleryLightbox();
+  initNavbarScrollEffect();
 });
