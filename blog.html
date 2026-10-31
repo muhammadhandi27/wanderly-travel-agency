@@ -23,15 +23,19 @@
       <a href="index.html" class="navbar__logo">Wanderly</a>
 
       <ul class="navbar__menu">
-        <li><a href="destination.html">Destinations</a></li>
-        <li><a href="tourpackage.html">Tour Packages</a></li>
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html" aria-current="page">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="destination.html" class="navbar__link">Destinations</a></li>
+        <li><a href="tourpackage.html" class="navbar__link">Tour Packages</a></li>
+        <li><a href="experiences.html" class="navbar__link">Experiences</a></li>
+        <li><a href="about.html" class="navbar__link">About</a></li>
+        <li><a href="blog.html" aria-current="page" class="navbar__link">Blog</a></li>
+        <li><a href="contact.html" class="navbar__link">Contact</a></li>
       </ul>
 
       <a href="booking.html" class="button button--primary navbar__cta">Book Your Trip</a>
+
+      <a href="wishlist.html" class="navbar__account" aria-label="Your Wishlist">
+        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      </a>
 
       <button type="button" class="navbar__toggle" aria-label="Open navigation menu" aria-expanded="false">
         <span></span>
@@ -47,22 +51,22 @@
 
     <!-- ===== PAGE HEADER ===== -->
     <section class="page-header" id="page-header">
-      <span class="page-header__eyebrow">CURATED JOURNEYS</span>
-      <h1 class="page-header__title">All Tour Packages</h1>
+      <span class="page-header__eyebrow">TRAVEL BLOG</span>
+      <h1 class="page-header__title">Travel Guides & Stories</h1>
       <p class="page-header__desc">
         A quick guide to help you choose a destination, decide when to travel, and prepare what to bring.
       </p>
     </section>
 
     <!-- ===== SEARCH & FILTER TOOLBAR ===== -->
-    <form class="destinations-toolbar" role="search" aria-label="Cari dan filter artikel blog">
+    <form class="destinations-toolbar" role="search" aria-label="Search and filter article blog">
       <div class="destinations-toolbar__search">
         <label for="blog-search" class="visually-hidden">Search an article</label>
         <i class="fa-solid fa-magnifying-glass blog-toolbar__search-icon" aria-hidden="true"></i>
         <input type="search" id="blog-search" name="blog-search" placeholder="Search an article">
       </div>
 
-      <div class="filter-bar" role="group" aria-label="Filter berdasarkan kategori artikel">
+      <div class="filter-bar" role="group" aria-label="Filter by article category">
         <button type="button" class="filter-bar__chip filter-bar__chip--active" data-filter="all">All</button>
         <button type="button" class="filter-bar__chip" data-filter="travel-guide">Travel Guide</button>
         <button type="button" class="filter-bar__chip" data-filter="destination">Destination</button>
@@ -142,8 +146,8 @@
       </div>
 
       <p class="blog__empty-state" id="blog-empty" hidden>
-        No trips found.<br>
-        Try changing your destination or travel dates.
+        No articles found. 
+        Try a different keyword or category.
       </p>
     </section>
 
@@ -197,9 +201,9 @@
     <div class="footer__bottom">
       <p class="footer__copyright">&copy; 2026 Wanderly. All rights reserved.</p>
       <ul class="footer__social">
-        <li><a href="#" aria-label="Wanderly di Instagram">Instagram</a></li>
-        <li><a href="#" aria-label="Wanderly di Facebook">Facebook</a></li>
-        <li><a href="#" aria-label="Wanderly di YouTube">YouTube</a></li>
+        <li><a href="#" aria-label="Wanderly on Instagram">Instagram</a></li>
+        <li><a href="#" aria-label="Wanderly on Facebook">Facebook</a></li>
+        <li><a href="#" aria-label="Wanderly on YouTube">YouTube</a></li>
       </ul>
     </div>
   </footer>
