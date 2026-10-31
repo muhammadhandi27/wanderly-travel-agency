@@ -894,7 +894,7 @@ function initDestinationDetailPage() {
     } else {
       if (headingEl) headingEl.textContent = `No Tours Yet for ${destination.name}`;
       if (grid) {
-        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package for ${destination.name} yet. <a href="contact.html">Contact us</a> and we can help put together a plan.</p>`
+        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package for ${destination.name} yet. <a href="contact.html">Contact us</a> and we can help put together a plan.</p>`;
       }
     }
   }
@@ -1150,7 +1150,7 @@ function initCostCalculator(pkg) {
 }
 
 // ===== 4.5.b. RENDER BLOG DETAIL PAGE =====
-function  initBlogDetailPage() {
+function initBlogDetailPage() {
   const page = document.querySelector(".blog-article");
   if (!page) return;
 
@@ -1239,8 +1239,6 @@ function initExperienceDetailPage() {
   const heroTitle = document.querySelector(".experience-hero__title");
   if (heroTitle) heroTitle.textContent = experience.title;
 
-  // const page_ = document.querySelector(".experience-detail");
-  // if (page_) page.innerHTML = buildArticleBodyHTML(experience.body);
   page.innerHTML = buildArticleBodyHTML(experience.body);
 
   const relatedSection = document.querySelector(".related-packages");
@@ -1264,12 +1262,6 @@ function initExperienceDetailPage() {
       }
     }
   }
-
-  const promoTitle = document.querySelector(".promo-banner__title");
-  if (promoTitle) promoTitle.textContent = `Ready for Your Next ${experience.title.includes("Together") || experience.title.includes("Two") ? "Trip" : experience.category.split(" ")[0]}?`;
-
-  const promoCta = document.querySelector(".promo-banner .button");
-  if (promoCta) promoCta.href = `tourpackage.html?category=${experience.id}`;
 }
 
 // ===== HELPER - SHOW "Not Found" MESSAGE on DETAIL PAGE =====
@@ -1502,7 +1494,7 @@ function createBookingHistoryItem(booking) {
 function renderBookingHistory() {
   const list = document.querySelector("#booking-history-list");
   const emptyMessage = document.querySelector("#booking-history-empty");
-  if (!list || !emptyMessage);
+  if (!list || !emptyMessage) return;
 
   const bookings = loadBookings();
 
