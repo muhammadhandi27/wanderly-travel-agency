@@ -882,22 +882,14 @@ function initDestinationDetailPage() {
   }
 
   // Related Packages
-  const relatedSection = document.querySelector(".related-packages");
-  if (relatedSection) {
-    const relatedPkg = tourPackagesData.find((item) => item.id === destination.relatedPackageId);
-    const headingEl = relatedSection.querySelector(".section-heading__title");
-    const grid = relatedSection.querySelector(".tour-package-grid");
-
-    if (relatedPkg) {
-      if (headingEl) headingEl.textContent = `Available Tours for ${destination.name}`;
-      if (grid) grid.innerHTML = buildTourPackageCardHTML(relatedPkg);
-    } else {
-      if (headingEl) headingEl.textContent = `No Tours Yet for ${destination.name}`;
-      if (grid) {
-        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package for ${destination.name} yet. <a href="contact.html">Contact us</a> and we can help put together a plan.</p>`;
-      }
+  renderRelatedPackage(
+    tourPackagesData.find((item) => item.id === destination.relatedPackageId),
+    {
+      heading: `Available Tours for ${destination.name}`,
+      emptyHeading: `No Tours Yet for ${destination.name}`,
+      emptyText: `We don't have a tour package for ${destination.name} yet. <a href="contact.html">Contact us</a> and we can help put together a plan.`,
     }
-  }
+  );
 
   // CTA Banner
   const promoTitle = document.querySelector(".promo-banner__title");
@@ -991,6 +983,35 @@ function buildTourPackageCardHTML(pkg) {
       </div>
     </article>
   `;
+}
+
+// ===== HELPER - Render Related Package Section =====
+function renderRelatedPackage(pkg, options = {}) {
+  const { eyebrow, heading, emptyHeading, emptyText, hideIfEmpty = false } = options;
+
+  const section = document.querySelector(".related-packages");
+  if (!section) return;
+
+  if (!pkg && hideIfEmpty) {
+    section.hidden = true;
+    return;
+  }
+
+  section.hidden = false;
+
+  const eyebrowEl = section.querySelector(".section-heading__eyebrow");
+  const headingEl = section.querySelector(".section-heading__title");
+  const grid = section.querySelector(".tour-package-grid");
+
+  if (eyebrowEl && eyebrow) eyebrowEl.textContent = eyebrow;
+
+  if (pkg) {
+    if (headingEl && heading) headingEl.textContent = heading;
+    if (grid) grid.innerHTML = buildTourPackageCardHTML(pkg);
+  } else {
+    if (headingEl && emptyHeading) headingEl.textContent = emptyHeading;
+    if (grid) grid.innerHTML = `<p class="tour-package-grid__empty">${emptyText}</p>`;
+  }
 }
 
 // ===== HELPER - Build HTML from Body Structure (Heading + Paragraph) =====
@@ -1193,17 +1214,10 @@ function initBlogDetailPage() {
   const bodyEl = document.querySelector(".blog-article__body");
   if (bodyEl) bodyEl.innerHTML = buildArticleBodyHTML(article.body);
 
-  const relatedSection = document.querySelector(".related-packages");
-  if (relatedSection) {
-    const relatedPkg = tourPackagesData.find((item) => item.id === article.relatedPackageId);
-    if (relatedPkg) {
-      relatedSection.hidden = false;
-      const grid = relatedSection.querySelector(".tour-package-grid");
-      if (grid) grid.innerHTML = buildTourPackageCardHTML(relatedPkg);
-    } else {
-      relatedSection.hidden = true;
-    }
-  }
+  renderRelatedPackage(
+    tourPackagesData.find((item) => item.id === article.relatedPackageId),
+    { hideIfEmpty: true }
+  );
 }
 
 // ===== RENDER EXPERIENCE DETAIL =====
@@ -1241,27 +1255,15 @@ function initExperienceDetailPage() {
 
   page.innerHTML = buildArticleBodyHTML(experience.body);
 
-  const relatedSection = document.querySelector(".related-packages");
-  if (relatedSection) {
-    const relatedPkg = tourPackagesData.find((item) => item.id === experience.relatedPackageId);
-    const headingEl = relatedSection.querySelector(".section-heading__title");
-    const eyebrowEl = relatedSection.querySelector(".section-heading__eyebrow");
-    const grid = relatedSection.querySelector(".tour-package-grid");
-
-    if (relatedPkg) {
-      relatedSection.hidden = false;
-      if (headingEl) headingEl.textContent = "Packages for This Experience";
-      if (eyebrowEl) eyebrowEl.textContent = `${experience.category}`;
-      if (grid) grid.innerHTML = buildTourPackageCardHTML(relatedPkg);
-    } else {
-      relatedSection.hidden = false;
-      if (headingEl) headingEl.textContent = "No Packages Yet for This Experience";
-      if (eyebrowEl) eyebrowEl.textContent = `${experience.category}`;
-      if (grid) {
-        grid.innerHTML = `<p class="tour-package-grid__empty">We don't have a tour package built specifically for this experience yet. <a href="contact.html">Contact Us</a> and we can help put together a plan.</p>`;
-      }
+  renderRelatedPackage(
+    tourPackagesData.find((item) => item.id === experience.relatedPackageId),
+    {
+      eyebrow: experience.category,
+      heading: "Packages for This Experience",
+      emptyHeading: "No Packages Yet for This Experience",
+      emptyText: `We don't have a tour package built specifically for this experience yet. <a href="contact.html">Contact us</a> an we can help put together a plan.`,
     }
-  }
+  );
 }
 
 // ===== HELPER - SHOW "Not Found" MESSAGE on DETAIL PAGE =====
