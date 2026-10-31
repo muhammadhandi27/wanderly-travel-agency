@@ -506,7 +506,7 @@ const experiencesData = [
   }
 ];
 
-// ===== 1. NAVBAR TOGGLE =====
+// ===== NAVBAR TOGGLE =====
 function initNavbarToggle() {
   const toggle = document.querySelector(".navbar__toggle");
   const navbar = document.querySelector(".navbar");
@@ -536,7 +536,7 @@ function initNavbarToggle() {
   });
 }
 
-// ===== 4.12. NAVBAR SCROLL EFFECT =====
+// ===== NAVBAR SCROLL EFFECT =====
 function initNavbarScrollEffect() {
   const header = document.querySelector(".header");
   if (!header || header.classList.contains("header--solid")) return;
@@ -551,7 +551,7 @@ function initNavbarScrollEffect() {
   updateHeader();
 }
 
-// ===== 2. FAQ ACCORDION =====
+// ===== FAQ ACCORDION =====
 function initFaqAccordion() {
   const questions = document.querySelectorAll(".faq-item__question");
   if (!questions.length) return;
@@ -577,7 +577,7 @@ function initFaqAccordion() {
   });
 }
 
-// ===== 3. SLIDER (Testimonials & Experience)
+// ===== SLIDER (Testimonials & Experience) =====
 function initSliders() {
   const sliders = document.querySelectorAll("[data-slider]");
 
@@ -694,7 +694,7 @@ function initSliders() {
   });
 }
 
-// ===== 4. FILTER & SEARCH =====
+// ===== FILTER & SEARCH =====
 function initFilterToolbar() {
   const toolbar = document.querySelector(".destinations-toolbar");
   if (!toolbar) return;
@@ -773,7 +773,7 @@ function initFilterToolbar() {
   }
 }
 
-// ===== 4.9. HERO SEARCH WIDGET =====
+// ===== HERO SEARCH WIDGET =====
 function initHeroSearch() {
   const form = document.querySelector(".search-widget");
   if (!form) return;
@@ -798,7 +798,7 @@ function initHeroSearch() {
   });
 }
 
-// ===== 4.5.a. RENDER DESTINATION DETAIL PAGE =====
+// ===== RENDER DESTINATION DETAIL PAGE =====
 function initDestinationDetailPage() {
   const page = document.querySelector(".destination-detail");
   if (!page) return;
@@ -882,7 +882,7 @@ function initDestinationDetailPage() {
   }
 
   // Related Packages
-  const relatedSection = document.querySelector(".related-package");
+  const relatedSection = document.querySelector(".related-packages");
   if (relatedSection) {
     const relatedPkg = tourPackagesData.find((item) => item.id === destination.relatedPackageId);
     const headingEl = relatedSection.querySelector(".section-heading__title");
@@ -907,9 +907,9 @@ function initDestinationDetailPage() {
   if (promoCta) promoCta.href = `booking.html?destination=${destination.id}`;
 }
 
-// ===== 4.10. PHOTO GALLERY LIGHTBOX =====
+// ===== PHOTO GALLERY LIGHTBOX =====
 function initGalleryLightbox() {
-  console.log("initGalleryLightbox berjalan");
+  // console.log("initGalleryLightbox berjalan");
   const lightbox = document.querySelector("#lightbox");
   const grid = document.querySelector(".destination-gallery__grid");
   if (!lightbox || !grid) return;
@@ -1004,7 +1004,7 @@ function buildArticleBodyHTML(body) {
     .join("");
 }
 
-// ===== 4.5.b. RENDER TOUR PACKAGE DETAIL PAGE =====
+// ===== RENDER TOUR PACKAGE DETAIL PAGE =====
 function initPackageDetailPage() {
   const page = document.querySelector(".package-detail");
   if (!page) return;
@@ -1102,7 +1102,7 @@ function initPackageDetailPage() {
   initCostCalculator(pkg);
 }
 
-// ===== 4.11. COST CALCULATOR =====
+// ===== COST CALCULATOR =====
 const usdFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -1149,7 +1149,7 @@ function initCostCalculator(pkg) {
   calculator.hidden = false;
 }
 
-// ===== 4.5.b. RENDER BLOG DETAIL PAGE =====
+// ===== RENDER BLOG DETAIL PAGE =====
 function initBlogDetailPage() {
   const page = document.querySelector(".blog-article");
   if (!page) return;
@@ -1206,7 +1206,7 @@ function initBlogDetailPage() {
   }
 }
 
-// ===== 4.5.b RENDER EXPERIENCE DETAIL =====
+// ===== RENDER EXPERIENCE DETAIL =====
 function initExperienceDetailPage() {
   const page = document.querySelector(".experience-detail");
   if (!page) return;
@@ -1338,7 +1338,7 @@ function buildExperienceCardHTML(exp) {
   `;
 }
 
-// ===== 4.5.c RERENDERING ALL CARD LISTING FROM DATA =====
+// ===== RERENDERING ALL CARD LISTING FROM DATA =====
 function renderListingCards() {
   const destContainer = document.querySelector("#destinations .destination-grid");
   if (destContainer) {
@@ -1363,7 +1363,7 @@ function renderListingCards() {
   }
 }
 
-// ====== 4.6. BOOKING FORM =====
+// ====== BOOKING FORM =====
 function getTodayISO() {
   const now = new Date();
   const month = String(now.getMonth() + 1).padStart(2, "0");
@@ -1647,7 +1647,7 @@ function initFormValidation(form, validators, onValid) {
   });
 }
 
-// ====== 4.7. WISHLIST =====
+// ====== WISHLIST =====
 function getWishlistItemFromButton(button) {
   if (button.dataset.destinationId) {
     return { type: "destination", id: button.dataset.destinationId };
@@ -1708,7 +1708,7 @@ function renderWishlistPage() {
   emptyMessage.hidden = hasCards;
 }
 
-// ===== 4.8.a. CONTACT FORM =====
+// ===== CONTACT FORM =====
 function validateEmailField(input) {
   if (!input.value.trim()) return "Please enter your email address.";
   if (input.validity.typeMismatch) return "Please enter a valid email address.";
@@ -1752,7 +1752,7 @@ function initContactForm() {
   });
 }
 
-// ===== 4.8.b. NEWSLETTER FORM =====
+// ===== NEWSLETTER FORM =====
 const newsletterValidators = {
   "newsletter-email": validateEmailField
 };
